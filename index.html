@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>求职神器 - 协议中心</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --text: #1d1d1f;
+            --muted: #626a73;
+            --border: #e5e7eb;
+            --bg: #f7f8fa;
+            --card: #ffffff;
+            --accent: #1565c0;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 32px 20px 56px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.75;
+        }
+        main {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+        h1 {
+            margin: 0 0 8px;
+            font-size: 32px;
+            line-height: 1.22;
+        }
+        p { margin: 0 0 12px; }
+        .subtle { color: var(--muted); }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 28px;
+        }
+        .card {
+            display: block;
+            min-height: 150px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--card);
+            color: inherit;
+            text-decoration: none;
+        }
+        .card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 24px rgba(21, 101, 192, 0.08);
+        }
+        .card h2 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+        .eyebrow {
+            margin-bottom: 8px;
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <p class="eyebrow">Qzshenqi Legal</p>
+    <h1>求职神器协议中心</h1>
+    <p class="subtle">更新日期：2026年6月27日</p>
+    <p>本页面汇总求职神器当前公开协议与政策。</p>
+
+    <div class="grid">
+        <a class="card" href="privacy.html">
+            <h2>隐私政策</h2>
+            <p>说明求职神器如何收集、使用、存储、共享和保护信息。</p>
+        </a>
+        <a class="card" href="terms.html">
+            <h2>用户协议</h2>
+            <p>说明服务内容、使用规范、AI 生成内容责任和付费规则。</p>
+        </a>
+        <a class="card" href="user_agreement.html">
+            <h2>会员协议</h2>
+            <p>说明会员权益、购买、恢复购买、退款和服务调整规则。</p>
+        </a>
+        <a class="card" href="auto_renewal.html">
+            <h2>续费协议</h2>
+            <p>说明自动续费扣费、取消订阅、退款和权益恢复规则。</p>
+        </a>
+    </div>
+</main>
+</body>
+</html>
