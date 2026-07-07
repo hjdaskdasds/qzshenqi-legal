@@ -108,12 +108,15 @@
       cursor: pointer;
       font: inherit;
       font-size: 14px;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
     }
 
     .segmented button.active {
       background: var(--ink);
       color: #fff;
     }
+
+    .segmented button:active { transform: translateY(1px); }
 
     .button {
       min-height: 40px;
@@ -131,12 +134,30 @@
       white-space: nowrap;
       cursor: pointer;
       font: inherit;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
     }
 
     .button.secondary {
       background: var(--paper);
       color: var(--ink);
       border-color: var(--line);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(17, 20, 20, .12);
+    }
+
+    .button:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    .button:focus-visible,
+    .segmented button:focus-visible,
+    .modal-close:focus-visible {
+      outline: 3px solid rgba(36, 87, 197, .26);
+      outline-offset: 2px;
     }
 
     .hero {
@@ -171,7 +192,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(42px, 6vw, 76px);
+      font-size: 70px;
       line-height: .96;
       letter-spacing: 0;
       max-width: 790px;
@@ -206,6 +227,13 @@
       background: var(--paper);
       border-radius: var(--radius);
       padding: 14px 14px 13px;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .proof:hover {
+      border-color: #b7c8bf;
+      box-shadow: 0 10px 24px rgba(23, 42, 34, .08);
+      transform: translateY(-2px);
     }
 
     .proof strong {
@@ -435,7 +463,7 @@
 
     .section-head h2 {
       margin: 0;
-      font-size: clamp(30px, 4vw, 48px);
+      font-size: 46px;
       line-height: 1.04;
       max-width: 730px;
       letter-spacing: 0;
@@ -463,6 +491,16 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .deliverable:hover,
+    .signal-card:hover,
+    .process-card:hover,
+    .faq-item:hover {
+      border-color: #b7c8bf;
+      box-shadow: 0 14px 30px rgba(23, 42, 34, .08);
+      transform: translateY(-2px);
     }
 
     .icon {
@@ -510,6 +548,13 @@
       border-radius: var(--radius);
       box-shadow: 0 10px 24px rgba(23, 42, 34, .06);
       overflow: hidden;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .panel:hover {
+      border-color: #b7c8bf;
+      box-shadow: 0 18px 38px rgba(23, 42, 34, .10);
+      transform: translateY(-2px);
     }
 
     .panel-header {
@@ -543,6 +588,7 @@
       border-radius: 8px;
       padding: 16px;
       background: #fff;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
 
     .signal-card h3 {
@@ -678,12 +724,189 @@
       color: #34473e;
       font-weight: 760;
       font-size: 14px;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
     }
 
     .category.active {
       border-color: #8bc9ae;
       background: var(--green-2);
       color: var(--green);
+      box-shadow: inset 0 0 0 1px rgba(23, 107, 77, .08);
+    }
+
+    .category:hover {
+      border-color: #b7c8bf;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(23, 42, 34, .07);
+    }
+
+    .decision-system {
+      background: #f3f7f5;
+    }
+
+    .decision-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .workflow-panel,
+    .roi-panel {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 12px 28px rgba(23, 42, 34, .06);
+    }
+
+    .workflow-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .workflow-step {
+      min-height: 132px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfcfb;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .workflow-step::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 3px;
+      background: #176b4d;
+    }
+
+    .workflow-step:nth-child(2)::before { background: #2457c5; }
+    .workflow-step:nth-child(3)::before { background: #c84c32; }
+    .workflow-step:nth-child(4)::before { background: #a36a00; }
+
+    .workflow-step b {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .workflow-step strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.25;
+      margin-bottom: 7px;
+    }
+
+    .workflow-step span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .evidence-table {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .evidence-row {
+      display: grid;
+      grid-template-columns: .8fr 1fr 1fr auto;
+      gap: 0;
+      min-height: 48px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+      font-size: 13px;
+    }
+
+    .evidence-row:last-child { border-bottom: 0; }
+    .evidence-row.head {
+      background: var(--field);
+      color: #34473e;
+      font-weight: 800;
+    }
+
+    .evidence-row > div {
+      padding: 12px;
+      border-right: 1px solid var(--line);
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .evidence-row > div:last-child { border-right: 0; }
+
+    .score-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 48px;
+      min-height: 28px;
+      border-radius: 999px;
+      background: var(--green-2);
+      color: var(--green);
+      font-weight: 850;
+    }
+
+    .roi-panel {
+      background: #132019;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .roi-panel h3 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.12;
+    }
+
+    .roi-panel p {
+      color: #bfd0c8;
+      line-height: 1.55;
+      margin: 12px 0 0;
+    }
+
+    .roi-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .roi-list li {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      line-height: 1.4;
+      color: #e4eee9;
+      font-size: 14px;
+    }
+
+    .roi-list b {
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      font-size: 12px;
     }
 
     .pricing {
@@ -701,12 +924,30 @@
       min-height: 360px;
       display: flex;
       flex-direction: column;
+      position: relative;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
     }
 
     .price-card.featured {
       border-color: #79b99d;
       box-shadow: var(--shadow);
       position: relative;
+    }
+
+    .price-card:hover,
+    .price-card.active-plan {
+      border-color: #5fa884;
+      box-shadow: 0 20px 42px rgba(23, 42, 34, .12);
+      transform: translateY(-3px);
+    }
+
+    .price-card.active-plan::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(23, 107, 77, .18);
+      border-radius: 6px;
+      pointer-events: none;
     }
 
     .badge {
@@ -788,6 +1029,7 @@
       border-radius: var(--radius);
       padding: 22px;
       min-height: 230px;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
 
     .process-card h3 {
@@ -977,6 +1219,7 @@
       background: var(--paper);
       border-radius: var(--radius);
       padding: 20px;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
 
     .faq-item h3 {
@@ -1010,7 +1253,7 @@
 
     .footer-cta h2 {
       margin: 0;
-      font-size: clamp(32px, 5vw, 56px);
+      font-size: 52px;
       line-height: 1.02;
     }
 
@@ -1026,6 +1269,256 @@
       background: #fff;
       color: #132019;
       border-color: #fff;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .modal-overlay[hidden] { display: none; }
+
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 16, 13, .58);
+      backdrop-filter: blur(10px);
+    }
+
+    .checkout-modal {
+      position: relative;
+      width: min(980px, 100%);
+      max-height: min(860px, calc(100vh - 40px));
+      overflow: auto;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 8px;
+      background: #fbfcfb;
+      color: var(--ink);
+      box-shadow: 0 34px 90px rgba(10, 16, 13, .38);
+      transform: translateY(10px) scale(.98);
+      opacity: 0;
+      transition: transform .22s ease, opacity .22s ease;
+    }
+
+    .modal-overlay.is-open .checkout-modal {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      z-index: 2;
+    }
+
+    .checkout-head {
+      padding: 26px 28px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .modal-kicker {
+      display: inline-flex;
+      min-height: 27px;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: var(--blue-2);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 850;
+      margin-bottom: 12px;
+    }
+
+    .checkout-head h2 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.08;
+      padding-right: 48px;
+    }
+
+    .checkout-head p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 720px;
+    }
+
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(290px, 360px);
+      gap: 16px;
+      padding: 18px;
+      align-items: start;
+    }
+
+    .checkout-summary,
+    .checkout-pay {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 18px;
+    }
+
+    .selected-plan {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+      border: 1px solid #b9dfce;
+      border-radius: 8px;
+      background: var(--green-2);
+      padding: 15px;
+    }
+
+    .selected-plan span {
+      display: block;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 850;
+      margin-bottom: 6px;
+    }
+
+    .selected-plan strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.16;
+    }
+
+    .selected-plan p {
+      margin: 7px 0 0;
+      color: #345a49;
+      font-size: 14px;
+      line-height: 1.42;
+    }
+
+    .selected-amount {
+      font-size: 28px;
+      font-weight: 880;
+      white-space: nowrap;
+      color: var(--ink);
+    }
+
+    .checkout-steps {
+      display: grid;
+      gap: 10px;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checkout-steps li {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfb;
+      color: #34473e;
+      line-height: 1.42;
+      font-size: 14px;
+    }
+
+    .checkout-steps b {
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .checkout-pay h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.18;
+    }
+
+    .checkout-pay p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .checkout-pay p strong {
+      color: var(--ink);
+      font-weight: 850;
+    }
+
+    .checkout-amount {
+      margin-top: 14px;
+      border: 1px solid #f0dca8;
+      border-radius: 8px;
+      background: #fff8e4;
+      color: #725000;
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 760;
+    }
+
+    .checkout-amount strong {
+      font-size: 24px;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .checkout-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .checkout-pay .qr-frame {
+      padding: 12px;
+    }
+
+    .checkout-pay .alipay-qr {
+      width: min(100%, 300px);
+      max-height: 340px;
+    }
+
+    .checkout-actions .button {
+      width: 100%;
+      white-space: normal;
+      text-align: center;
+    }
+
+    .trust-note {
+      margin-top: 14px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    body.modal-open {
+      overflow: hidden;
     }
 
     body:not(.zh) [data-lang="zh"] { display: none !important; }
@@ -1044,6 +1537,7 @@
     @media (max-width: 980px) {
       .hero-grid,
       .sample-grid,
+      .decision-grid,
       .cta-box {
         grid-template-columns: 1fr;
       }
@@ -1056,9 +1550,12 @@
       .payment-grid,
       .process-grid,
       .faq-grid { grid-template-columns: 1fr; }
+      .workflow-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .checkout-grid { grid-template-columns: 1fr; }
       .category-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .section-head { display: block; }
       .section-head p { margin-top: 12px; max-width: 680px; }
+      h1 { font-size: 52px; }
     }
 
     @media (max-width: 640px) {
@@ -1118,6 +1615,7 @@
       .deliverables,
       .metric-strip,
       .score-row,
+      .workflow-steps,
       .category-grid {
         grid-template-columns: 1fr;
       }
@@ -1130,6 +1628,9 @@
       .table-row { grid-template-columns: 1fr; }
       .table-row > div { border-right: 0; border-bottom: 1px solid var(--line); }
       .table-row > div:last-child { border-bottom: 0; }
+      .evidence-row { grid-template-columns: 1fr; }
+      .evidence-row > div { border-right: 0; border-bottom: 1px solid var(--line); }
+      .evidence-row > div:last-child { border-bottom: 0; }
       h1 {
         font-size: 37px;
         line-height: 1.02;
@@ -1139,12 +1640,43 @@
         line-height: 1.52;
       }
       .section-head h2 { font-size: 31px; }
+      .footer-cta h2 { font-size: 34px; }
+      .roi-panel h3 { font-size: 25px; }
       .payment-panel,
       .price-card,
       .process-card,
       .deliverable,
-      .faq-item {
+      .faq-item,
+      .workflow-panel,
+      .roi-panel {
         padding: 18px;
+      }
+      .checkout-modal {
+        max-height: calc(100vh - 20px);
+      }
+      .checkout-head {
+        padding: 22px 18px 16px;
+      }
+      .checkout-head h2 {
+        font-size: 27px;
+        padding-right: 42px;
+      }
+      .checkout-grid {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+      }
+      .checkout-pay { order: 1; }
+      .checkout-summary { order: 2; }
+      .selected-plan {
+        grid-template-columns: 1fr;
+      }
+      .selected-amount {
+        font-size: 26px;
+      }
+      .checkout-pay .alipay-qr {
+        width: min(100%, 260px);
+        max-height: 292px;
       }
       .qr-frame { padding: 10px; }
       .amount-row {
@@ -1172,6 +1704,42 @@
       .faq-item p {
         overflow-wrap: anywhere;
       }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .report-sheet {
+        animation: floatSheet 7s ease-in-out infinite;
+      }
+
+      .email-card {
+        animation: floatEmail 8s ease-in-out infinite;
+      }
+
+      .workflow-step,
+      .price-card {
+        will-change: transform;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    @keyframes floatSheet {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes floatEmail {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(7px); }
     }
   </style>
 </head>
@@ -1457,6 +2025,99 @@
       </div>
     </section>
 
+    <section class="decision-system">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 data-lang="en">From noisy complaints to a build-ready product brief.</h2>
+          <h2 data-lang="zh">从杂乱抱怨，到能直接开工的产品简报。</h2>
+          <p data-lang="en">The value is not another idea list. It is a repeatable research workflow that helps you judge demand before spending weeks building.</p>
+          <p data-lang="zh">价值不在于再给你一堆点子，而是用固定研究流程帮你在投入开发前判断需求质量。</p>
+        </div>
+
+        <div class="decision-grid">
+          <article class="workflow-panel">
+            <div class="tag-row">
+              <span class="tag green">Evidence first</span>
+              <span class="tag blue">Founder-ready</span>
+              <span class="tag coral">Launch angle included</span>
+            </div>
+            <div class="workflow-steps">
+              <div class="workflow-step">
+                <b>01</b>
+                <strong data-lang="en">Find fresh pain</strong>
+                <strong data-lang="zh">发现新鲜痛点</strong>
+                <span data-lang="en">Recent posts, active comments, repeated complaints, and visible workarounds.</span>
+                <span data-lang="zh">筛选近期帖子、活跃评论、重复抱怨和用户正在使用的替代方案。</span>
+              </div>
+              <div class="workflow-step">
+                <b>02</b>
+                <strong data-lang="en">Score demand</strong>
+                <strong data-lang="zh">评估需求强度</strong>
+                <span data-lang="en">Pain intensity, buyer clarity, budget clues, urgency, and competition level.</span>
+                <span data-lang="zh">评估痛点强度、买家清晰度、预算线索、紧急程度和竞争水平。</span>
+              </div>
+              <div class="workflow-step">
+                <b>03</b>
+                <strong data-lang="en">Shape the MVP</strong>
+                <strong data-lang="zh">收敛 MVP</strong>
+                <span data-lang="en">Small product scope, core promise, pricing range, and fastest test path.</span>
+                <span data-lang="zh">整理最小产品范围、核心承诺、定价区间和最快验证路径。</span>
+              </div>
+              <div class="workflow-step">
+                <b>04</b>
+                <strong data-lang="en">Prepare launch copy</strong>
+                <strong data-lang="zh">准备推广角度</strong>
+                <span data-lang="en">Hook, target user, reply angle, landing-page promise, and risk notes.</span>
+                <span data-lang="zh">输出钩子、目标用户、回复角度、落地页承诺和风险提醒。</span>
+              </div>
+            </div>
+
+            <div class="evidence-table" aria-label="Example evidence table">
+              <div class="evidence-row head">
+                <div><span data-lang="en">Signal</span><span data-lang="zh">信号来源</span></div>
+                <div><span data-lang="en">Pain quote</span><span data-lang="zh">痛点原文</span></div>
+                <div><span data-lang="en">Likely product</span><span data-lang="zh">可做产品</span></div>
+                <div><span data-lang="en">Score</span><span data-lang="zh">评分</span></div>
+              </div>
+              <div class="evidence-row">
+                <div><span data-lang="en">Freelancers</span><span data-lang="zh">自由职业者</span></div>
+                <div><span data-lang="en">Scope keeps expanding after the quote is approved.</span><span data-lang="zh">报价确认后，项目范围还在不断膨胀。</span></div>
+                <div><span data-lang="en">Scope guard + change request kit</span><span data-lang="zh">范围控制器 + 变更需求话术包</span></div>
+                <div><span class="score-pill">8.7</span></div>
+              </div>
+              <div class="evidence-row">
+                <div><span data-lang="en">App founders</span><span data-lang="zh">App 创始人</span></div>
+                <div><span data-lang="en">Reviews are too messy to turn into a roadmap.</span><span data-lang="zh">用户评论太乱，很难整理成产品路线图。</span></div>
+                <div><span data-lang="en">Review mining report assistant</span><span data-lang="zh">评论挖掘报告助手</span></div>
+                <div><span class="score-pill">8.1</span></div>
+              </div>
+              <div class="evidence-row">
+                <div><span data-lang="en">Creators</span><span data-lang="zh">创作者</span></div>
+                <div><span data-lang="en">Following up on unpaid invoices feels awkward.</span><span data-lang="zh">催客户付逾期账单很尴尬，不知道怎么开口。</span></div>
+                <div><span data-lang="en">Payment reminder script pack</span><span data-lang="zh">收款提醒话术包</span></div>
+                <div><span class="score-pill">7.8</span></div>
+              </div>
+            </div>
+          </article>
+
+          <aside class="roi-panel">
+            <div>
+              <h3 data-lang="en">Why people pay for this instead of browsing Reddit themselves.</h3>
+              <h3 data-lang="zh">为什么用户会付费，而不是自己刷 Reddit。</h3>
+              <p data-lang="en">Raw community research is slow, scattered, and easy to misread. We compress it into a weekly decision stack you can compare in one sitting.</p>
+              <p data-lang="zh">自己做社区调研很慢、很散，也容易误判。我们把它压缩成一份可以集中比较和决策的机会情报。</p>
+            </div>
+            <ul class="roi-list">
+              <li><b>1</b><span data-lang="en">Save research time before every build sprint.</span><span data-lang="zh">每次开工前节省大量调研时间。</span></li>
+              <li><b>2</b><span data-lang="en">Avoid ideas with weak pain or unclear buyers.</span><span data-lang="zh">避开痛点弱、买家不清晰的点子。</span></li>
+              <li><b>3</b><span data-lang="en">Receive product angle, pricing, and launch copy together.</span><span data-lang="zh">同时拿到产品角度、定价和推广文案。</span></li>
+              <li><b>4</b><span data-lang="en">Keep a steady pipeline of opportunities without context switching.</span><span data-lang="zh">不用频繁切换平台，也能持续获得机会管道。</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section>
       <div class="wrap">
         <div class="section-head">
@@ -1490,7 +2151,7 @@
         </div>
 
         <div class="pricing">
-          <article class="price-card">
+          <article class="price-card" data-plan-card="weekly">
             <h3 data-lang="en">Weekly</h3>
             <h3 data-lang="zh">周报版</h3>
             <div class="price">¥99 <small data-lang="en">/ month</small><small data-lang="zh">/ 月</small></div>
@@ -1501,13 +2162,13 @@
               <li><span class="check">✓</span><span data-lang="en">10 opportunities per issue</span><span data-lang="zh">每期 10 个机会</span></li>
               <li><span class="check">✓</span><span data-lang="en">Pain evidence and MVP angle</span><span data-lang="zh">痛点证据与 MVP 角度</span></li>
             </ul>
-            <a class="button secondary" href="#alipay-payment">
+            <button class="button secondary plan-trigger" type="button" data-plan="weekly">
               <span data-lang="en">Start Weekly</span>
               <span data-lang="zh">订阅周报</span>
-            </a>
+            </button>
           </article>
 
-          <article class="price-card featured">
+          <article class="price-card featured active-plan" data-plan-card="pro">
             <div class="badge" data-lang="en">Recommended</div>
             <div class="badge" data-lang="zh">推荐</div>
             <h3 data-lang="en">Pro</h3>
@@ -1521,13 +2182,13 @@
               <li><span class="check">✓</span><span data-lang="en">Category preferences</span><span data-lang="zh">品类偏好推送</span></li>
               <li><span class="check">✓</span><span data-lang="en">Launch copy angles</span><span data-lang="zh">推广文案角度</span></li>
             </ul>
-            <a class="button" href="#alipay-payment">
+            <button class="button plan-trigger" type="button" data-plan="pro">
               <span data-lang="en">Start Pro</span>
               <span data-lang="zh">订阅专业版</span>
-            </a>
+            </button>
           </article>
 
-          <article class="price-card">
+          <article class="price-card" data-plan-card="studio">
             <h3 data-lang="en">Studio</h3>
             <h3 data-lang="zh">工作室版</h3>
             <div class="price">¥999 <small data-lang="en">/ month</small><small data-lang="zh">/ 月</small></div>
@@ -1539,82 +2200,15 @@
               <li><span class="check">✓</span><span data-lang="en">Landing page angle</span><span data-lang="zh">落地页定位角度</span></li>
               <li><span class="check">✓</span><span data-lang="en">Launch reply scripts</span><span data-lang="zh">推广回复话术</span></li>
             </ul>
-            <a class="button secondary" href="#alipay-payment">
+            <button class="button secondary plan-trigger" type="button" data-plan="studio">
               <span data-lang="en">Apply for Studio</span>
               <span data-lang="zh">申请工作室版</span>
-            </a>
+            </button>
           </article>
         </div>
         <div class="payment-note">
           <span data-lang="en">MVP payment note: prepaid monthly access, no auto-renewal. Activation starts after payment proof and delivery preferences are submitted.</span>
           <span data-lang="zh">MVP 支付说明：预付费按月开通，不做自动续费。提交付款凭证和接收偏好后开始开通。</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="alipay-payment">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 data-lang="en">Pay with Alipay, then submit activation details.</h2>
-          <h2 data-lang="zh">支付宝付款后，提交开通信息。</h2>
-          <p data-lang="en">Alipay confirms the payment, but we still need the delivery email, plan, language, report cadence, categories, and proof of payment to activate the service.</p>
-          <p data-lang="zh">支付宝能确认付款，但无法告诉我们收件邮箱、购买套餐、语言、报告频率、关注品类和付款凭证，所以需要补充开通信息。</p>
-        </div>
-
-        <div class="payment-grid">
-          <article class="payment-panel">
-            <h3 data-lang="en">Scan to pay</h3>
-            <h3 data-lang="zh">扫码付款</h3>
-            <p data-lang="en">Use Alipay scan and enter the matching amount for your selected plan.</p>
-            <p data-lang="zh">使用支付宝扫码，并按所选套餐输入对应金额。</p>
-            <div class="qr-frame">
-              <img class="alipay-qr" src="assets/alipay-qr.jpg" alt="Alipay payment QR code">
-            </div>
-          </article>
-
-          <article class="payment-panel">
-            <h3 data-lang="en">Choose the amount</h3>
-            <h3 data-lang="zh">选择付款金额</h3>
-            <p data-lang="en">Recommended starting point: Pro. It includes both daily signal emails and the weekly PDF report.</p>
-            <p data-lang="zh">推荐从专业版开始：包含每日机会邮件和每周 PDF 深度报告。</p>
-
-            <div class="amount-list">
-              <div class="amount-row">
-                <div>
-                  <strong data-lang="en">Weekly access</strong>
-                  <strong data-lang="zh">周报版</strong>
-                  <span data-lang="en">1 weekly PDF report, 10 opportunities per issue.</span>
-                  <span data-lang="zh">每周 1 份 PDF 报告，每期 10 个机会。</span>
-                </div>
-                <div class="amount">¥99</div>
-              </div>
-              <div class="amount-row recommended">
-                <div>
-                  <strong data-lang="en">Pro access</strong>
-                  <strong data-lang="zh">专业版</strong>
-                  <span data-lang="en">Daily signal email, weekly PDF, category preferences.</span>
-                  <span data-lang="zh">每日机会邮件、每周 PDF、品类偏好推送。</span>
-                </div>
-                <div class="amount">¥199</div>
-              </div>
-              <div class="amount-row">
-                <div>
-                  <strong data-lang="en">Studio access</strong>
-                  <strong data-lang="zh">工作室版</strong>
-                  <span data-lang="en">Everything in Pro plus one custom opportunity breakdown.</span>
-                  <span data-lang="zh">包含专业版全部内容，并增加 1 个定制机会拆解。</span>
-                </div>
-                <div class="amount">¥999</div>
-              </div>
-            </div>
-
-            <div class="form-purpose">
-              <strong data-lang="en">Why a Feishu or Tally form is needed</strong>
-              <strong data-lang="zh">为什么还需要飞书或 Tally 表单</strong>
-              <p data-lang="en">The form is not for payment. It tells us where to send reports, which plan to activate, and how to personalize your feed after your Alipay payment is complete.</p>
-              <p data-lang="zh">表单不是用来收款的，而是在支付宝付款后收集开通信息，告诉我们报告发到哪里、开通哪个套餐、按什么语言和品类发送。</p>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -1666,6 +2260,10 @@
             <p data-lang="zh">付款后优先提交 Tally 表单。如果表单打不开，可复制邮件模板，连同付款截图一起发送到 lee271420@gmail.com。我们会在 24 小时内完成开通。</p>
           </div>
           <div class="payment-actions">
+            <button class="button plan-trigger" type="button" data-plan="pro">
+              <span data-lang="en">Open Subscription Checkout</span>
+              <span data-lang="zh">打开订阅付款</span>
+            </button>
             <a class="button" href="https://tally.so/r/kdx0G6" target="_blank" rel="noopener">
               <span data-lang="en">Submit Tally Form</span>
               <span data-lang="zh">提交 Tally 表单</span>
@@ -1677,10 +2275,6 @@
             <a class="button secondary" href="mailto:lee271420@gmail.com?subject=Opportunity%20Intel%20activation&body=Email%20for%20delivery%3A%0APlan%3A%20Weekly%20%2F%20Pro%20%2F%20Studio%0ALanguage%3A%20English%20%2F%20Chinese%0AReport%20cadence%3A%20Daily%20%2F%20Weekly%20%2F%20Both%0APreferred%20categories%3A%0AAlipay%20payer%20name%3A%0APayment%20amount%3A%20%C2%A599%20%2F%20%C2%A5199%20%2F%20%C2%A5999%0APayment%20screenshot%3A%20attached">
               <span data-lang="en">Email Activation</span>
               <span data-lang="zh">邮件开通</span>
-            </a>
-            <a class="button secondary" href="#alipay-payment">
-              <span data-lang="en">Back to Alipay QR</span>
-              <span data-lang="zh">返回收款码</span>
             </a>
             <span class="copy-status" id="copyStatus" aria-live="polite"></span>
           </div>
@@ -1733,62 +2327,199 @@
           <p data-lang="en">Every report is designed to help you decide what to build, who it is for, why now, and how to test demand before writing too much code.</p>
           <p data-lang="zh">每份报告都帮助你判断做什么、卖给谁、为什么现在值得做，以及如何在写太多代码之前验证需求。</p>
         </div>
-        <a class="button" href="#pricing">
+        <button class="button plan-trigger" type="button" data-plan="pro">
           <span data-lang="en">Subscribe Today</span>
           <span data-lang="zh">立即订阅</span>
-        </a>
+        </button>
       </div>
     </section>
   </main>
 
+  <div class="modal-overlay" id="checkoutModal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-describedby="checkoutDescription">
+      <button class="modal-close" type="button" aria-label="Close checkout" data-close-modal>&times;</button>
+      <div class="checkout-head">
+        <span class="modal-kicker" data-lang="en">Manual Alipay checkout</span>
+        <span class="modal-kicker" data-lang="zh">支付宝人工开通</span>
+        <h2 id="checkoutTitle" data-lang="en">Complete your subscription.</h2>
+        <h2 data-lang="zh">完成订阅付款。</h2>
+        <p id="checkoutDescription" data-lang="en">Choose the matching amount in Alipay, then submit the activation form so we know where to send your daily emails and weekly reports.</p>
+        <p data-lang="zh">请在支付宝中按所选套餐输入对应金额，付款后提交开通表单，方便我们发送日报和周报。</p>
+      </div>
+
+      <div class="checkout-grid">
+        <article class="checkout-summary">
+          <div class="selected-plan">
+            <div>
+              <span data-lang="en">Selected plan</span>
+              <span data-lang="zh">当前选择</span>
+              <strong id="modalPlanName">Pro</strong>
+              <p id="modalPlanSummary">Daily signal email, weekly PDF, category preferences, and launch copy angles.</p>
+            </div>
+            <div class="selected-amount" id="modalPlanAmount">¥199</div>
+          </div>
+          <ul class="checkout-steps">
+            <li><b>1</b><span data-lang="en">Scan the Alipay QR code and enter the selected amount manually.</span><span data-lang="zh">扫码支付宝收款码，并手动输入所选套餐金额。</span></li>
+            <li><b>2</b><span data-lang="en">Submit the Tally activation form with email, plan, language, categories, payer name, and screenshot.</span><span data-lang="zh">提交 Tally 开通表单，填写邮箱、套餐、语言、品类、付款昵称和截图。</span></li>
+            <li><b>3</b><span data-lang="en">Access is activated within 24 hours. Pro receives daily signals plus the weekly PDF report.</span><span data-lang="zh">24 小时内完成开通。专业版会收到每日信号和每周 PDF 报告。</span></li>
+          </ul>
+          <div class="trust-note">
+            <span data-lang="en">MVP note: prepaid monthly access, no auto-renewal. If anything goes wrong, email lee271420@gmail.com with your screenshot.</span>
+            <span data-lang="zh">MVP 说明：按月预付费开通，不自动续费。如遇问题，请把付款截图发送到 lee271420@gmail.com。</span>
+          </div>
+        </article>
+
+        <article class="checkout-pay">
+          <h3 data-lang="en">Pay with Alipay</h3>
+          <h3 data-lang="zh">支付宝付款</h3>
+          <p>
+            <span data-lang="en">Selected plan:</span>
+            <span data-lang="zh">当前套餐：</span>
+            <strong id="modalPayPlan">Pro</strong>
+          </p>
+          <p data-lang="en">Use Alipay scan and pay the exact amount shown below.</p>
+          <p data-lang="zh">请使用支付宝扫码，并支付下方显示的对应金额。</p>
+          <div class="checkout-amount">
+            <span data-lang="en">Amount to pay</span>
+            <span data-lang="zh">应付金额</span>
+            <strong id="modalAmountDue">¥199</strong>
+          </div>
+          <div class="qr-frame">
+            <img class="alipay-qr" src="assets/alipay-qr.jpg" alt="Alipay payment QR code">
+          </div>
+          <div class="checkout-actions">
+            <a class="button" href="https://tally.so/r/kdx0G6" target="_blank" rel="noopener">
+              <span data-lang="en">Submit Activation Form</span>
+              <span data-lang="zh">提交开通表单</span>
+            </a>
+            <button class="button secondary" type="button" id="copyActivationModal">
+              <span data-lang="en">Copy Email Template</span>
+              <span data-lang="zh">复制邮件模板</span>
+            </button>
+            <a class="button secondary" href="mailto:lee271420@gmail.com?subject=Opportunity%20Intel%20activation&body=Email%20for%20delivery%3A%0APlan%3A%20Weekly%20%2F%20Pro%20%2F%20Studio%0ALanguage%3A%20English%20%2F%20Chinese%0AReport%20cadence%3A%20Daily%20%2F%20Weekly%20%2F%20Both%0APreferred%20categories%3A%0AAlipay%20payer%20name%3A%0APayment%20amount%3A%20%C2%A599%20%2F%20%C2%A5199%20%2F%20%C2%A5999%0APayment%20screenshot%3A%20attached">
+              <span data-lang="en">Email Us Instead</span>
+              <span data-lang="zh">邮件联系开通</span>
+            </a>
+            <span class="copy-status" id="copyStatusModal" aria-live="polite"></span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
   <script>
     const enBtn = document.getElementById('enBtn');
     const zhBtn = document.getElementById('zhBtn');
+    const checkoutModal = document.getElementById('checkoutModal');
+    const modalPlanName = document.getElementById('modalPlanName');
+    const modalPlanSummary = document.getElementById('modalPlanSummary');
+    const modalPlanAmount = document.getElementById('modalPlanAmount');
+    const modalPayPlan = document.getElementById('modalPayPlan');
+    const modalAmountDue = document.getElementById('modalAmountDue');
+    const planCards = document.querySelectorAll('[data-plan-card]');
+    const planButtons = document.querySelectorAll('.plan-trigger');
+    const categoryButtons = document.querySelectorAll('.category');
+    let selectedPlan = 'pro';
+    let lastFocusedElement = null;
+
+    const planDetails = {
+      weekly: {
+        amount: '¥99',
+        name: { en: 'Weekly', zh: '周报版' },
+        summary: {
+          en: 'One focused weekly PDF with 10 opportunities, pain evidence, and MVP angles.',
+          zh: '每周一份深度 PDF，包含 10 个机会、痛点证据和 MVP 角度。'
+        }
+      },
+      pro: {
+        amount: '¥199',
+        name: { en: 'Pro', zh: '专业版' },
+        summary: {
+          en: 'Daily signal email, weekly PDF, category preferences, and launch copy angles.',
+          zh: '每日机会邮件、每周 PDF、品类偏好推送和推广文案角度。'
+        }
+      },
+      studio: {
+        amount: '¥999',
+        name: { en: 'Studio', zh: '工作室版' },
+        summary: {
+          en: 'Everything in Pro plus one custom opportunity breakdown each month.',
+          zh: '包含专业版全部内容，并增加每月 1 个定制机会拆解。'
+        }
+      }
+    };
+
+    function currentLang() {
+      return document.body.classList.contains('zh') ? 'zh' : 'en';
+    }
+
+    function updatePlanDisplay(plan = selectedPlan) {
+      selectedPlan = planDetails[plan] ? plan : 'pro';
+      const lang = currentLang();
+      const detail = planDetails[selectedPlan];
+      modalPlanName.textContent = detail.name[lang];
+      modalPayPlan.textContent = detail.name[lang];
+      modalPlanSummary.textContent = detail.summary[lang];
+      modalPlanAmount.textContent = detail.amount;
+      modalAmountDue.textContent = detail.amount;
+      planCards.forEach((card) => {
+        card.classList.toggle('active-plan', card.dataset.planCard === selectedPlan);
+      });
+    }
+
     function setLang(lang) {
       document.body.classList.toggle('zh', lang === 'zh');
       enBtn.classList.toggle('active', lang === 'en');
       zhBtn.classList.toggle('active', lang === 'zh');
       document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      updatePlanDisplay();
     }
     enBtn.addEventListener('click', () => setLang('en'));
     zhBtn.addEventListener('click', () => setLang('zh'));
 
     const copyActivation = document.getElementById('copyActivation');
     const copyStatus = document.getElementById('copyStatus');
-    const activationTemplates = {
-      en: [
-        'Opportunity Intel activation',
-        '',
-        'Preferred activation form: https://tally.so/r/kdx0G6',
-        '',
-        'Email for delivery:',
-        'Plan: Weekly / Pro / Studio',
-        'Language: English / Chinese',
-        'Report cadence: Daily / Weekly / Both',
-        'Preferred categories: All / AI Tools / Developer Tools / Productivity / B2B SaaS / Creator Economy / Marketing / E-commerce / Education / Health & Wellness',
-        'Alipay payer name:',
-        'Payment amount: ¥99 / ¥199 / ¥999',
-        'Payment screenshot: attached',
-        '',
-        'Email fallback: lee271420@gmail.com'
-      ].join('\n'),
-      zh: [
+    const copyActivationModal = document.getElementById('copyActivationModal');
+    const copyStatusModal = document.getElementById('copyStatusModal');
+
+    function activationTemplate(lang) {
+      const detail = planDetails[selectedPlan];
+      const planName = detail.name[lang];
+      const lines = lang === 'zh' ? [
         'Opportunity Intel 开通信息',
         '',
         '优先提交表单：https://tally.so/r/kdx0G6',
         '',
         '接收报告邮箱：',
-        '购买套餐：周报版 / 专业版 / 工作室版',
+        `购买套餐：${planName}`,
         '语言偏好：英文 / 中文',
         '报告频率：每日 / 每周 / 两者都要',
         '关注品类：全品类 / AI 工具 / 开发者工具 / 效率工具 / B2B SaaS / 创作者经济 / 营销 / 电商 / 教育 / 健康与生活方式',
         '支付宝付款昵称：',
-        '付款金额：¥99 / ¥199 / ¥999',
+        `付款金额：${detail.amount}`,
         '付款截图：已附',
         '',
         '邮箱备用：lee271420@gmail.com'
-      ].join('\n')
-    };
+      ] : [
+        'Opportunity Intel activation',
+        '',
+        'Preferred activation form: https://tally.so/r/kdx0G6',
+        '',
+        'Email for delivery:',
+        `Plan: ${planName}`,
+        'Language: English / Chinese',
+        'Report cadence: Daily / Weekly / Both',
+        'Preferred categories: All / AI Tools / Developer Tools / Productivity / B2B SaaS / Creator Economy / Marketing / E-commerce / Education / Health & Wellness',
+        'Alipay payer name:',
+        `Payment amount: ${detail.amount}`,
+        'Payment screenshot: attached',
+        '',
+        'Email fallback: lee271420@gmail.com'
+      ];
+
+      return lines.join('\n');
+    }
 
     async function copyToClipboard(text) {
       if (navigator.clipboard && window.isSecureContext) {
@@ -1806,14 +2537,58 @@
       textarea.remove();
     }
 
-    copyActivation.addEventListener('click', async () => {
-      const lang = document.body.classList.contains('zh') ? 'zh' : 'en';
-      await copyToClipboard(activationTemplates[lang]);
-      copyStatus.textContent = lang === 'zh' ? '模板已复制' : 'Template copied';
+    async function handleCopy(statusElement) {
+      const lang = currentLang();
+      await copyToClipboard(activationTemplate(lang));
+      statusElement.textContent = lang === 'zh' ? '模板已复制' : 'Template copied';
       window.setTimeout(() => {
-        copyStatus.textContent = '';
+        statusElement.textContent = '';
       }, 2200);
+    }
+
+    copyActivation.addEventListener('click', () => handleCopy(copyStatus));
+    copyActivationModal.addEventListener('click', () => handleCopy(copyStatusModal));
+
+    function openCheckout(plan) {
+      updatePlanDisplay(plan);
+      lastFocusedElement = document.activeElement;
+      checkoutModal.hidden = false;
+      document.body.classList.add('modal-open');
+      window.requestAnimationFrame(() => {
+        checkoutModal.classList.add('is-open');
+      });
+      checkoutModal.querySelector('.modal-close').focus();
+    }
+
+    function closeCheckout() {
+      checkoutModal.classList.remove('is-open');
+      document.body.classList.remove('modal-open');
+      window.setTimeout(() => {
+        checkoutModal.hidden = true;
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }, 180);
+    }
+
+    planButtons.forEach((button) => {
+      button.addEventListener('click', () => openCheckout(button.dataset.plan));
     });
+
+    checkoutModal.addEventListener('click', (event) => {
+      if (event.target.matches('[data-close-modal]')) closeCheckout();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !checkoutModal.hidden) closeCheckout();
+    });
+
+    categoryButtons.forEach((category) => {
+      category.addEventListener('click', () => {
+        categoryButtons.forEach((item) => item.classList.remove('active'));
+        category.classList.add('active');
+      });
+    });
+
+    updatePlanDisplay();
   </script>
 </body>
 </html>
