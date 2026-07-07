@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Opportunity Intel - Daily Micro-SaaS Opportunity Reports</title>
+  <meta name="description" content="Opportunity Intel delivers evidence-backed micro-SaaS opportunity briefs for indie builders, with daily signals, weekly PDF reports, scoring, pricing angles, and launch copy.">
+  <title>Opportunity Intel | Evidence-Backed Micro-SaaS Opportunity Briefs</title>
   <style>
     :root {
       color-scheme: light;
@@ -67,7 +68,24 @@
       letter-spacing: 0;
     }
 
-    .brand span { white-space: nowrap; }
+    .brand-text {
+      display: grid;
+      gap: 2px;
+    }
+
+    .brand-name {
+      white-space: nowrap;
+      font-size: 15px;
+      line-height: 1.1;
+    }
+
+    .brand-line {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 680;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
 
     .mark {
       width: 36px;
@@ -90,33 +108,60 @@
       justify-content: flex-end;
     }
 
-    .segmented {
-      display: inline-flex;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 3px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--paper);
-      padding: 3px;
+      background: rgba(255,255,255,.78);
+      padding: 4px;
+      box-shadow: 0 6px 18px rgba(23, 42, 34, .04);
     }
 
-    .segmented button {
-      border: 0;
-      background: transparent;
-      color: var(--muted);
+    .nav-links a {
       min-height: 32px;
-      padding: 0 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
       border-radius: 6px;
-      cursor: pointer;
-      font: inherit;
-      font-size: 14px;
-      transition: background .18s ease, color .18s ease, transform .18s ease;
+      color: #3d4b45;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 720;
+      white-space: nowrap;
+      transition: background .18s ease, color .18s ease;
     }
 
-    .segmented button.active {
-      background: var(--ink);
-      color: #fff;
+    .nav-links a:hover {
+      background: var(--field);
+      color: var(--ink);
     }
 
-    .segmented button:active { transform: translateY(1px); }
+    .nav-trust {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid #cbd8d1;
+      border-radius: 999px;
+      background: #fff;
+      color: #41514a;
+      padding: 0 11px;
+      font-size: 12px;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+
+    .nav-trust::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(23, 107, 77, .12);
+    }
 
     .button {
       min-height: 40px;
@@ -154,7 +199,7 @@
     }
 
     .button:focus-visible,
-    .segmented button:focus-visible,
+    .nav-links a:focus-visible,
     .modal-close:focus-visible {
       outline: 3px solid rgba(36, 87, 197, .26);
       outline-offset: 2px;
@@ -248,6 +293,39 @@
       margin-top: 8px;
       font-size: 13px;
       line-height: 1.35;
+    }
+
+    .assurance-strip {
+      margin-top: 16px;
+      max-width: 720px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .assurance-item {
+      min-height: 52px;
+      border: 1px solid #dce5e0;
+      border-radius: 8px;
+      background: rgba(255,255,255,.72);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .assurance-item b {
+      display: block;
+      font-size: 12px;
+      line-height: 1.18;
+    }
+
+    .assurance-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.28;
+      margin-top: 3px;
     }
 
     .report-stack {
@@ -1045,6 +1123,49 @@
       font-size: 15px;
     }
 
+    .service-standard {
+      background: #fbfcfb;
+    }
+
+    .standard-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .standard-card {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: var(--radius);
+      padding: 20px;
+      min-height: 210px;
+    }
+
+    .standard-card b {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--blue-2);
+      color: var(--blue);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .standard-card h3 {
+      margin: 0 0 9px;
+      font-size: 19px;
+      line-height: 1.22;
+    }
+
+    .standard-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
     .payment-note {
       margin-top: 16px;
       border: 1px solid #f0dca8;
@@ -1541,19 +1662,6 @@
       overflow: hidden;
     }
 
-    body:not(.zh) [data-lang="zh"] { display: none !important; }
-    body.zh [data-lang="en"] { display: none !important; }
-    body.zh [data-lang="zh"] { display: inline; }
-    body.zh div[data-lang="zh"],
-    body.zh p[data-lang="zh"],
-    body.zh span[data-lang="zh"],
-    body.zh h1[data-lang="zh"],
-    body.zh h2[data-lang="zh"],
-    body.zh h3[data-lang="zh"],
-    body.zh small[data-lang="zh"],
-    body.zh strong[data-lang="zh"],
-    body.zh li[data-lang="zh"] { display: revert; }
-
     @media (max-width: 980px) {
       .hero-grid,
       .sample-grid,
@@ -1569,6 +1677,7 @@
       .pricing { grid-template-columns: 1fr; }
       .payment-grid,
       .process-grid,
+      .standard-grid,
       .faq-grid { grid-template-columns: 1fr; }
       .workflow-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .checkout-grid { grid-template-columns: 1fr; }
@@ -1599,31 +1708,27 @@
       }
       .nav-actions {
         width: 100%;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        display: flex;
         gap: 8px;
+        justify-content: flex-start;
       }
       .nav-actions > * { min-width: 0; }
-      .segmented {
+      .nav-links {
         width: 100%;
-        justify-content: center;
+        overflow-x: auto;
+        justify-content: flex-start;
+        scrollbar-width: none;
       }
-      .segmented button {
-        min-height: 32px;
-        padding: 0 8px;
-        font-size: 12px;
-      }
+      .nav-links::-webkit-scrollbar { display: none; }
       .nav-actions .button {
-        width: 100%;
+        width: auto;
         min-height: 34px;
         padding: 0 9px;
         font-size: 12px;
         white-space: normal;
         text-align: center;
       }
-      .nav-actions .button:not(.secondary) {
-        grid-column: 1 / -1;
-      }
+      .nav-trust { font-size: 11px; min-height: 32px; }
       .hero { padding-top: 30px; }
       .hero-actions .button,
       .payment-actions .button {
@@ -1632,6 +1737,7 @@
         text-align: center;
       }
       .proof-row,
+      .assurance-strip,
       .deliverables,
       .metric-strip,
       .score-row,
@@ -1768,20 +1874,22 @@
     <div class="wrap nav">
       <div class="brand">
         <div class="mark">OI</div>
-        <span>Opportunity Intel</span>
-      </div>
-      <div class="nav-actions">
-        <div class="segmented" aria-label="Language switch">
-          <button type="button" class="active" id="enBtn">EN</button>
-          <button type="button" id="zhBtn">中文</button>
+        <div class="brand-text">
+          <span class="brand-name">Opportunity Intel</span>
+          <span class="brand-line">Research briefs for indie builders</span>
         </div>
-        <a class="button secondary" href="#sample">
-          <span data-lang="en">View Sample</span>
-          <span data-lang="zh">查看样张</span>
-        </a>
+      </div>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#deliverables">Deliverables</a>
+        <a href="#sample">Sample</a>
+        <a href="#method">Method</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <span class="nav-trust">24h activation</span>
         <a class="button" href="#pricing">
-          <span data-lang="en">Subscribe</span>
-          <span data-lang="zh">订阅报告</span>
+          <span>Subscribe</span>
         </a>
       </div>
     </div>
@@ -1792,38 +1900,53 @@
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">
-            <span data-lang="en">Daily and weekly opportunity intelligence</span>
-            <span data-lang="zh">每日 + 每周小产品机会情报</span>
+            <span>Daily and weekly opportunity intelligence</span>
+
           </div>
-          <h1 data-lang="en">Find validated micro-SaaS opportunities before everyone else.</h1>
-          <h1 data-lang="zh">在别人动手前，发现已被验证的小产品机会。</h1>
-          <p class="lead" data-lang="en">We scan online communities for real complaints, unmet needs, buying signals, and clumsy workarounds, then turn them into concise product briefs for indie builders.</p>
-          <p class="lead" data-lang="zh">我们从 Reddit、App Store 评论、Product Hunt 等渠道筛选真实抱怨、未满足需求、付费信号和低效替代方案，并整理成适合独立开发者执行的产品机会简报。</p>
+          <h1>Find validated micro-SaaS opportunities before everyone else.</h1>
+
+          <p class="lead">We scan online communities for real complaints, unmet needs, buying signals, and clumsy workarounds, then turn them into concise product briefs for indie builders.</p>
+
           <div class="hero-actions">
             <a class="button" href="#pricing">
-              <span data-lang="en">Get Reports</span>
-              <span data-lang="zh">获取报告</span>
+              <span>Get Reports</span>
+
             </a>
             <a class="button secondary" href="#sample">
-              <span data-lang="en">Preview the Format</span>
-              <span data-lang="zh">预览交付样式</span>
+              <span>Preview the Format</span>
+
             </a>
           </div>
           <div class="proof-row">
             <div class="proof">
               <strong>3-5</strong>
-              <span data-lang="en">daily signals filtered from noisy communities</span>
-              <span data-lang="zh">每日筛选高质量机会信号</span>
+              <span>daily signals filtered from noisy communities</span>
             </div>
             <div class="proof">
               <strong>10-15</strong>
-              <span data-lang="en">weekly deep opportunities with MVP angles</span>
-              <span data-lang="zh">每周深度拆解机会</span>
+              <span>weekly deep opportunities with MVP angles</span>
             </div>
             <div class="proof">
               <strong>10h+</strong>
-              <span data-lang="en">research time saved per week</span>
-              <span data-lang="zh">每周节省调研时间</span>
+              <span>research time saved per week</span>
+            </div>
+          </div>
+          <div class="assurance-strip" aria-label="Service assurances">
+            <div class="assurance-item">
+              <b>Evidence-backed</b>
+              <span>Source notes and pain signals included</span>
+            </div>
+            <div class="assurance-item">
+              <b>24h activation</b>
+              <span>Delivery starts after payment confirmation</span>
+            </div>
+            <div class="assurance-item">
+              <b>No auto-renewal</b>
+              <span>Prepaid monthly access only</span>
+            </div>
+            <div class="assurance-item">
+              <b>Email support</b>
+              <span>lee271420@gmail.com</span>
             </div>
           </div>
         </div>
@@ -1832,16 +1955,16 @@
           <div class="report-sheet">
             <div class="report-top">
               <div class="report-title">
-                <span data-lang="en">Weekly Opportunity Brief</span>
-                <span data-lang="zh">每周机会情报简报</span>
+                <span>Weekly Opportunity Brief</span>
+
               </div>
               <div class="report-date">Issue 01</div>
             </div>
             <div class="report-body">
               <div class="score-row">
-                <div class="score"><b>8.7</b><span data-lang="en">Pain</span><span data-lang="zh">痛点强度</span></div>
-                <div class="score"><b>7.9</b><span data-lang="en">Pay intent</span><span data-lang="zh">付费意愿</span></div>
-                <div class="score"><b>4.1</b><span data-lang="en">Crowding</span><span data-lang="zh">竞争拥挤度</span></div>
+                <div class="score"><b>8.7</b><span>Pain</span></div>
+                <div class="score"><b>7.9</b><span>Pay intent</span></div>
+                <div class="score"><b>4.1</b><span>Crowding</span></div>
               </div>
               <div class="opportunity">
                 <div class="tag-row">
@@ -1849,14 +1972,14 @@
                   <span class="tag blue">Reddit Signal</span>
                   <span class="tag coral">Scope Creep</span>
                 </div>
-                <h3 style="margin-top:14px;" data-lang="en">Client Scope Guard for Freelancers</h3>
-                <h3 style="margin-top:14px;" data-lang="zh">自由职业者客户范围控制工具</h3>
-                <p class="quote" data-lang="en">“I keep saying yes to one more small request, then realize the whole project is unpaid extra work.”</p>
-                <p class="quote" data-lang="zh">“我总是答应客户再加一点小需求，最后发现整个项目多出来的工作都没收费。”</p>
+                <h3 style="margin-top:14px;">Client Scope Guard for Freelancers</h3>
+
+                <p class="quote">“I keep saying yes to one more small request, then realize the whole project is unpaid extra work.”</p>
+
                 <div class="action-plan">
-                  <div class="plan-item"><span class="num">1</span><span data-lang="en">MVP: quote generator + change-request scripts</span><span data-lang="zh">MVP：报价生成器 + 变更需求话术</span></div>
-                  <div class="plan-item"><span class="num">2</span><span data-lang="en">Pricing: $9 one-time pack or $7/mo assistant</span><span data-lang="zh">定价：$9 一次性资料包或 $7/月助手</span></div>
-                  <div class="plan-item"><span class="num">3</span><span data-lang="en">Launch angle: stop doing unpaid client work</span><span data-lang="zh">推广角度：别再免费做客户加需求</span></div>
+                  <div class="plan-item"><span class="num">1</span><span>MVP: quote generator + change-request scripts</span></div>
+                  <div class="plan-item"><span class="num">2</span><span>Pricing: $9 one-time pack or $7/mo assistant</span></div>
+                  <div class="plan-item"><span class="num">3</span><span>Launch angle: stop doing unpaid client work</span></div>
                 </div>
               </div>
             </div>
@@ -1864,29 +1987,29 @@
 
           <div class="email-card">
             <div class="email-head">
-              <b data-lang="en">Today’s Signals</b>
-              <b data-lang="zh">今日机会信号</b>
-              <span data-lang="en">3 opportunities in 4 minutes</span>
-              <span data-lang="zh">4 分钟读完 3 个机会</span>
+              <b>Today’s Signals</b>
+
+              <span>3 opportunities in 4 minutes</span>
+
             </div>
             <div class="email-body">
               <div class="mini-signal">
-                <b data-lang="en">AI meeting notes for non-tech founders</b>
-                <b data-lang="zh">给非技术创始人的 AI 会议纪要</b>
-                <span data-lang="en">Users complain current tools are too enterprise-heavy.</span>
-                <span data-lang="zh">用户抱怨现有工具太企业化、太复杂。</span>
+                <b>AI meeting notes for non-tech founders</b>
+
+                <span>Users complain current tools are too enterprise-heavy.</span>
+
               </div>
               <div class="mini-signal">
-                <b data-lang="en">App Store review reply assistant</b>
-                <b data-lang="zh">App Store 评论回复助手</b>
-                <span data-lang="en">Indie app makers ask for faster review triage.</span>
-                <span data-lang="zh">独立 App 开发者需要更快处理评论。</span>
+                <b>App Store review reply assistant</b>
+
+                <span>Indie app makers ask for faster review triage.</span>
+
               </div>
               <div class="mini-signal">
-                <b data-lang="en">Creator invoice reminder kit</b>
-                <b data-lang="zh">创作者收款提醒工具包</b>
-                <span data-lang="en">Pain signal: awkward follow-ups after late payments.</span>
-                <span data-lang="zh">痛点：客户逾期付款后难以开口催款。</span>
+                <b>Creator invoice reminder kit</b>
+
+                <span>Pain signal: awkward follow-ups after late payments.</span>
+
               </div>
             </div>
           </div>
@@ -1894,62 +2017,62 @@
       </div>
     </section>
 
-    <section>
+    <section id="deliverables">
       <div class="wrap">
         <div class="section-head">
-          <h2 data-lang="en">What you receive after subscribing.</h2>
-          <h2 data-lang="zh">订阅后你会收到什么。</h2>
-          <p data-lang="en">A recurring research system: fast daily signals, deeper weekly PDFs, opportunity scorecards, and category filters.</p>
-          <p data-lang="zh">这不是一次性资料，而是一套持续交付的机会情报系统：日报、周报、评分卡和品类偏好推送。</p>
+          <h2>What you receive after subscribing.</h2>
+
+          <p>A recurring research system: fast daily signals, deeper weekly PDFs, opportunity scorecards, and category filters.</p>
+
         </div>
 
         <div class="deliverables">
           <article class="deliverable">
             <div>
               <div class="icon">D</div>
-              <h3 data-lang="en">Daily Signal Email</h3>
-              <h3 data-lang="zh">每日机会邮件</h3>
-              <p data-lang="en">3-5 concise opportunities with source, pain quote, urgency score, and next action.</p>
-              <p data-lang="zh">每天 3-5 个机会，包含来源、痛点原文、紧急程度和下一步动作。</p>
+              <h3>Daily Signal Email</h3>
+
+              <p>3-5 concise opportunities with source, pain quote, urgency score, and next action.</p>
+
             </div>
-            <small data-lang="en">Best for momentum</small>
-            <small data-lang="zh">适合保持灵感和执行节奏</small>
+            <small>Best for momentum</small>
+
           </article>
 
           <article class="deliverable">
             <div>
               <div class="icon">W</div>
-              <h3 data-lang="en">Weekly PDF Report</h3>
-              <h3 data-lang="zh">每周 PDF 深度报告</h3>
-              <p data-lang="en">10-15 curated opportunities with MVP, pricing, launch copy, and risk analysis.</p>
-              <p data-lang="zh">每周 10-15 个深度机会，包含 MVP、定价、推广文案和风险拆解。</p>
+              <h3>Weekly PDF Report</h3>
+
+              <p>10-15 curated opportunities with MVP, pricing, launch copy, and risk analysis.</p>
+
             </div>
-            <small data-lang="en">Best for weekend planning</small>
-            <small data-lang="zh">适合周末选题和规划</small>
+            <small>Best for weekend planning</small>
+
           </article>
 
           <article class="deliverable">
             <div>
               <div class="icon">S</div>
-              <h3 data-lang="en">Opportunity Scorecard</h3>
-              <h3 data-lang="zh">机会评分卡</h3>
-              <p data-lang="en">Pain strength, pay intent, competition, build difficulty, and distribution fit.</p>
-              <p data-lang="zh">痛点强度、付费意愿、竞争程度、开发难度和推广适配度。</p>
+              <h3>Opportunity Scorecard</h3>
+
+              <p>Pain strength, pay intent, competition, build difficulty, and distribution fit.</p>
+
             </div>
-            <small data-lang="en">Best for comparing ideas</small>
-            <small data-lang="zh">适合快速比较点子质量</small>
+            <small>Best for comparing ideas</small>
+
           </article>
 
           <article class="deliverable">
             <div>
               <div class="icon">F</div>
-              <h3 data-lang="en">Category Feed</h3>
-              <h3 data-lang="zh">品类偏好推送</h3>
-              <p data-lang="en">Choose AI tools, DevTools, productivity, creator economy, B2B SaaS, or all categories.</p>
-              <p data-lang="zh">可选择 AI 工具、开发者工具、效率、创作者经济、B2B SaaS 或全品类。</p>
+              <h3>Category Feed</h3>
+
+              <p>Choose AI tools, DevTools, productivity, creator economy, B2B SaaS, or all categories.</p>
+
             </div>
-            <small data-lang="en">Default: all categories</small>
-            <small data-lang="zh">默认：全品类</small>
+            <small>Default: all categories</small>
+
           </article>
         </div>
       </div>
@@ -1958,17 +2081,17 @@
     <section id="sample">
       <div class="wrap">
         <div class="section-head">
-          <h2 data-lang="en">A sample brief you can act on immediately.</h2>
-          <h2 data-lang="zh">一份能直接用于决策的样张。</h2>
-          <p data-lang="en">Every opportunity is packaged with evidence, scoring, positioning, MVP scope, pricing, risk, and launch angles.</p>
-          <p data-lang="zh">每个机会都包含证据、评分、定位、MVP 范围、定价、风险和推广角度。</p>
+          <h2>A sample brief you can act on immediately.</h2>
+
+          <p>Every opportunity is packaged with evidence, scoring, positioning, MVP scope, pricing, risk, and launch angles.</p>
+
         </div>
 
         <div class="sample-grid">
           <div class="panel">
             <div class="panel-header">
-              <strong data-lang="en">Daily Signal Preview</strong>
-              <strong data-lang="zh">日报样张</strong>
+              <strong>Daily Signal Preview</strong>
+
               <span>04 Jul 2026</span>
             </div>
             <div class="panel-body signal-list">
@@ -1978,10 +2101,10 @@
                   <span class="tag blue">AI Tools</span>
                   <span class="tag gold">Solo-buildable</span>
                 </div>
-                <h3 data-lang="en">“I need a lightweight CRM that starts from my inbox, not a sales pipeline.”</h3>
-                <h3 data-lang="zh">“我需要一个从邮箱出发的轻量 CRM，而不是复杂销售流程。”</h3>
-                <p data-lang="en">Opportunity: a freelancer-friendly relationship tracker that turns email threads into follow-up tasks and lightweight deal notes.</p>
-                <p data-lang="zh">机会：面向自由职业者的轻量关系管理工具，把邮件线索转成跟进任务和客户记录。</p>
+                <h3>“I need a lightweight CRM that starts from my inbox, not a sales pipeline.”</h3>
+
+                <p>Opportunity: a freelancer-friendly relationship tracker that turns email threads into follow-up tasks and lightweight deal notes.</p>
+
                 <div class="metric-strip">
                   <div class="metric"><b>8.4</b><span>Pain</span></div>
                   <div class="metric"><b>7.1</b><span>Pay</span></div>
@@ -1996,18 +2119,18 @@
                   <span class="tag blue">App builders</span>
                   <span class="tag green">Clear buyer</span>
                 </div>
-                <h3 data-lang="en">App founders are manually reading reviews to find churn reasons.</h3>
-                <h3 data-lang="zh">App 创始人在手动阅读评论，寻找用户流失原因。</h3>
-                <p data-lang="en">Opportunity: a review-mining brief that groups complaints into bugs, onboarding gaps, pricing resistance, and feature requests.</p>
-                <p data-lang="zh">机会：评论挖掘简报，把用户抱怨归类为 Bug、引导问题、价格阻力和功能请求。</p>
+                <h3>App founders are manually reading reviews to find churn reasons.</h3>
+
+                <p>Opportunity: a review-mining brief that groups complaints into bugs, onboarding gaps, pricing resistance, and feature requests.</p>
+
               </article>
             </div>
           </div>
 
           <div class="panel pdf-preview">
             <div class="panel-header">
-              <strong data-lang="en">Weekly PDF Preview</strong>
-              <strong data-lang="zh">周报 PDF 样张</strong>
+              <strong>Weekly PDF Preview</strong>
+
               <span>12-page deep report</span>
             </div>
             <div class="pdf-page">
@@ -2016,8 +2139,8 @@
                   <span class="tag green">Issue 01</span>
                   <span class="tag blue">Productivity</span>
                 </div>
-                <h3 style="margin-top:16px;" data-lang="en">10 micro-SaaS opportunities from real user complaints</h3>
-                <h3 style="margin-top:16px;" data-lang="zh">10 个来自真实用户抱怨的小产品机会</h3>
+                <h3 style="margin-top:16px;">10 micro-SaaS opportunities from real user complaints</h3>
+
                 <div class="pdf-lines">
                   <div class="line w90"></div>
                   <div class="line w78"></div>
@@ -2045,13 +2168,13 @@
       </div>
     </section>
 
-    <section class="decision-system">
+    <section class="decision-system" id="method">
       <div class="wrap">
         <div class="section-head">
-          <h2 data-lang="en">From noisy complaints to a build-ready product brief.</h2>
-          <h2 data-lang="zh">从杂乱抱怨，到能直接开工的产品简报。</h2>
-          <p data-lang="en">The value is not another idea list. It is a repeatable research workflow that helps you judge demand before spending weeks building.</p>
-          <p data-lang="zh">价值不在于再给你一堆点子，而是用固定研究流程帮你在投入开发前判断需求质量。</p>
+          <h2>From noisy complaints to a build-ready product brief.</h2>
+
+          <p>The value is not another idea list. It is a repeatable research workflow that helps you judge demand before spending weeks building.</p>
+
         </div>
 
         <div class="decision-grid">
@@ -2064,57 +2187,57 @@
             <div class="workflow-steps">
               <div class="workflow-step">
                 <b>01</b>
-                <strong data-lang="en">Find fresh pain</strong>
-                <strong data-lang="zh">发现新鲜痛点</strong>
-                <span data-lang="en">Recent posts, active comments, repeated complaints, and visible workarounds.</span>
-                <span data-lang="zh">筛选近期帖子、活跃评论、重复抱怨和用户正在使用的替代方案。</span>
+                <strong>Find fresh pain</strong>
+
+                <span>Recent posts, active comments, repeated complaints, and visible workarounds.</span>
+
               </div>
               <div class="workflow-step">
                 <b>02</b>
-                <strong data-lang="en">Score demand</strong>
-                <strong data-lang="zh">评估需求强度</strong>
-                <span data-lang="en">Pain intensity, buyer clarity, budget clues, urgency, and competition level.</span>
-                <span data-lang="zh">评估痛点强度、买家清晰度、预算线索、紧急程度和竞争水平。</span>
+                <strong>Score demand</strong>
+
+                <span>Pain intensity, buyer clarity, budget clues, urgency, and competition level.</span>
+
               </div>
               <div class="workflow-step">
                 <b>03</b>
-                <strong data-lang="en">Shape the MVP</strong>
-                <strong data-lang="zh">收敛 MVP</strong>
-                <span data-lang="en">Small product scope, core promise, pricing range, and fastest test path.</span>
-                <span data-lang="zh">整理最小产品范围、核心承诺、定价区间和最快验证路径。</span>
+                <strong>Shape the MVP</strong>
+
+                <span>Small product scope, core promise, pricing range, and fastest test path.</span>
+
               </div>
               <div class="workflow-step">
                 <b>04</b>
-                <strong data-lang="en">Prepare launch copy</strong>
-                <strong data-lang="zh">准备推广角度</strong>
-                <span data-lang="en">Hook, target user, reply angle, landing-page promise, and risk notes.</span>
-                <span data-lang="zh">输出钩子、目标用户、回复角度、落地页承诺和风险提醒。</span>
+                <strong>Prepare launch copy</strong>
+
+                <span>Hook, target user, reply angle, landing-page promise, and risk notes.</span>
+
               </div>
             </div>
 
             <div class="evidence-table" aria-label="Example evidence table">
               <div class="evidence-row head">
-                <div><span data-lang="en">Signal</span><span data-lang="zh">信号来源</span></div>
-                <div><span data-lang="en">Pain quote</span><span data-lang="zh">痛点原文</span></div>
-                <div><span data-lang="en">Likely product</span><span data-lang="zh">可做产品</span></div>
-                <div><span data-lang="en">Score</span><span data-lang="zh">评分</span></div>
+                <div><span>Signal</span></div>
+                <div><span>Pain quote</span></div>
+                <div><span>Likely product</span></div>
+                <div><span>Score</span></div>
               </div>
               <div class="evidence-row">
-                <div><span data-lang="en">Freelancers</span><span data-lang="zh">自由职业者</span></div>
-                <div><span data-lang="en">Scope keeps expanding after the quote is approved.</span><span data-lang="zh">报价确认后，项目范围还在不断膨胀。</span></div>
-                <div><span data-lang="en">Scope guard + change request kit</span><span data-lang="zh">范围控制器 + 变更需求话术包</span></div>
+                <div><span>Freelancers</span></div>
+                <div><span>Scope keeps expanding after the quote is approved.</span></div>
+                <div><span>Scope guard + change request kit</span></div>
                 <div><span class="score-pill">8.7</span></div>
               </div>
               <div class="evidence-row">
-                <div><span data-lang="en">App founders</span><span data-lang="zh">App 创始人</span></div>
-                <div><span data-lang="en">Reviews are too messy to turn into a roadmap.</span><span data-lang="zh">用户评论太乱，很难整理成产品路线图。</span></div>
-                <div><span data-lang="en">Review mining report assistant</span><span data-lang="zh">评论挖掘报告助手</span></div>
+                <div><span>App founders</span></div>
+                <div><span>Reviews are too messy to turn into a roadmap.</span></div>
+                <div><span>Review mining report assistant</span></div>
                 <div><span class="score-pill">8.1</span></div>
               </div>
               <div class="evidence-row">
-                <div><span data-lang="en">Creators</span><span data-lang="zh">创作者</span></div>
-                <div><span data-lang="en">Following up on unpaid invoices feels awkward.</span><span data-lang="zh">催客户付逾期账单很尴尬，不知道怎么开口。</span></div>
-                <div><span data-lang="en">Payment reminder script pack</span><span data-lang="zh">收款提醒话术包</span></div>
+                <div><span>Creators</span></div>
+                <div><span>Following up on unpaid invoices feels awkward.</span></div>
+                <div><span>Payment reminder script pack</span></div>
                 <div><span class="score-pill">7.8</span></div>
               </div>
             </div>
@@ -2122,16 +2245,16 @@
 
           <aside class="roi-panel">
             <div>
-              <h3 data-lang="en">Why people pay for this instead of browsing Reddit themselves.</h3>
-              <h3 data-lang="zh">为什么用户会付费，而不是自己刷 Reddit。</h3>
-              <p data-lang="en">Raw community research is slow, scattered, and easy to misread. We compress it into a weekly decision stack you can compare in one sitting.</p>
-              <p data-lang="zh">自己做社区调研很慢、很散，也容易误判。我们把它压缩成一份可以集中比较和决策的机会情报。</p>
+              <h3>Why people pay for this instead of browsing Reddit themselves.</h3>
+
+              <p>Raw community research is slow, scattered, and easy to misread. We compress it into a weekly decision stack you can compare in one sitting.</p>
+
             </div>
             <ul class="roi-list">
-              <li><b>1</b><span data-lang="en">Save research time before every build sprint.</span><span data-lang="zh">每次开工前节省大量调研时间。</span></li>
-              <li><b>2</b><span data-lang="en">Avoid ideas with weak pain or unclear buyers.</span><span data-lang="zh">避开痛点弱、买家不清晰的点子。</span></li>
-              <li><b>3</b><span data-lang="en">Receive product angle, pricing, and launch copy together.</span><span data-lang="zh">同时拿到产品角度、定价和推广文案。</span></li>
-              <li><b>4</b><span data-lang="en">Keep a steady pipeline of opportunities without context switching.</span><span data-lang="zh">不用频繁切换平台，也能持续获得机会管道。</span></li>
+              <li><b>1</b><span>Save research time before every build sprint.</span></li>
+              <li><b>2</b><span>Avoid ideas with weak pain or unclear buyers.</span></li>
+              <li><b>3</b><span>Receive product angle, pricing, and launch copy together.</span></li>
+              <li><b>4</b><span>Keep a steady pipeline of opportunities without context switching.</span></li>
             </ul>
           </aside>
         </div>
@@ -2141,10 +2264,10 @@
     <section>
       <div class="wrap">
         <div class="section-head">
-          <h2 data-lang="en">Choose your categories, or receive everything.</h2>
-          <h2 data-lang="zh">选择关注品类，或默认接收全品类。</h2>
-          <p data-lang="en">After payment, you can choose the categories you care about. If you skip the form, we send the all-category feed by default.</p>
-          <p data-lang="zh">付款后你可以选择关注品类。如果不填写偏好，我们默认发送全品类报告。</p>
+          <h2>Choose your categories, or receive everything.</h2>
+
+          <p>After payment, you can choose the categories you care about. If you skip the form, we send the all-category feed by default.</p>
+
         </div>
         <div class="category-grid">
           <div class="category active">All Categories</div>
@@ -2164,71 +2287,71 @@
     <section id="pricing">
       <div class="wrap">
         <div class="section-head">
-          <h2 data-lang="en">Start with monthly access. Upgrade anytime.</h2>
-          <h2 data-lang="zh">先按月开通，随时升级套餐。</h2>
-          <p data-lang="en">Payment is handled through Alipay. After payment, submit your activation details so reports are delivered to the right inbox.</p>
-          <p data-lang="zh">当前支持支付宝付款。付款后提交开通信息，我们会按你的邮箱、语言和品类偏好发送报告。</p>
+          <h2>Start with monthly access. Upgrade anytime.</h2>
+
+          <p>Payment is handled through Alipay. After payment, submit your activation details so reports are delivered to the right inbox.</p>
+
         </div>
 
         <div class="pricing">
           <article class="price-card" data-plan-card="weekly">
-            <h3 data-lang="en">Weekly</h3>
-            <h3 data-lang="zh">周报版</h3>
-            <div class="price">¥99 <small data-lang="en">/ month</small><small data-lang="zh">/ 月</small></div>
-            <p data-lang="en">For builders who want one focused planning report every week.</p>
-            <p data-lang="zh">适合每周集中筛选机会和规划选题的独立开发者。</p>
+            <h3>Weekly</h3>
+
+            <div class="price">¥99 <small>/ month</small></div>
+            <p>For builders who want one focused planning report every week.</p>
+
             <ul class="features">
-              <li><span class="check">✓</span><span data-lang="en">Weekly PDF report</span><span data-lang="zh">每周 PDF 深度报告</span></li>
-              <li><span class="check">✓</span><span data-lang="en">10 opportunities per issue</span><span data-lang="zh">每期 10 个机会</span></li>
-              <li><span class="check">✓</span><span data-lang="en">Pain evidence and MVP angle</span><span data-lang="zh">痛点证据与 MVP 角度</span></li>
+              <li><span class="check">✓</span><span>Weekly PDF report</span></li>
+              <li><span class="check">✓</span><span>10 opportunities per issue</span></li>
+              <li><span class="check">✓</span><span>Pain evidence and MVP angle</span></li>
             </ul>
             <button class="button secondary plan-trigger" type="button" data-plan="weekly">
-              <span data-lang="en">Start Weekly</span>
-              <span data-lang="zh">订阅周报</span>
+              <span>Start Weekly</span>
+
             </button>
           </article>
 
           <article class="price-card featured active-plan" data-plan-card="pro">
-            <div class="badge" data-lang="en">Recommended</div>
-            <div class="badge" data-lang="zh">推荐</div>
-            <h3 data-lang="en">Pro</h3>
-            <h3 data-lang="zh">专业版</h3>
-            <div class="price">¥199 <small data-lang="en">/ month</small><small data-lang="zh">/ 月</small></div>
-            <p data-lang="en">Daily momentum plus a weekly deep report for serious indie builders.</p>
-            <p data-lang="zh">每日机会信号 + 每周深度报告，适合认真寻找产品机会的人。</p>
+            <div class="badge">Recommended</div>
+
+            <h3>Pro</h3>
+
+            <div class="price">¥199 <small>/ month</small></div>
+            <p>Daily momentum plus a weekly deep report for serious indie builders.</p>
+
             <ul class="features">
-              <li><span class="check">✓</span><span data-lang="en">Daily signal email</span><span data-lang="zh">每日机会邮件</span></li>
-              <li><span class="check">✓</span><span data-lang="en">Weekly PDF report</span><span data-lang="zh">每周 PDF 报告</span></li>
-              <li><span class="check">✓</span><span data-lang="en">Category preferences</span><span data-lang="zh">品类偏好推送</span></li>
-              <li><span class="check">✓</span><span data-lang="en">Launch copy angles</span><span data-lang="zh">推广文案角度</span></li>
+              <li><span class="check">✓</span><span>Daily signal email</span></li>
+              <li><span class="check">✓</span><span>Weekly PDF report</span></li>
+              <li><span class="check">✓</span><span>Category preferences</span></li>
+              <li><span class="check">✓</span><span>Launch copy angles</span></li>
             </ul>
             <button class="button plan-trigger" type="button" data-plan="pro">
-              <span data-lang="en">Start Pro</span>
-              <span data-lang="zh">订阅专业版</span>
+              <span>Start Pro</span>
+
             </button>
           </article>
 
           <article class="price-card" data-plan-card="studio">
-            <h3 data-lang="en">Studio</h3>
-            <h3 data-lang="zh">工作室版</h3>
-            <div class="price">¥999 <small data-lang="en">/ month</small><small data-lang="zh">/ 月</small></div>
-            <p data-lang="en">For founders who want one custom opportunity breakdown each month.</p>
-            <p data-lang="zh">适合希望每月获得一个定制机会拆解的开发者或小团队。</p>
+            <h3>Studio</h3>
+
+            <div class="price">¥999 <small>/ month</small></div>
+            <p>For founders who want one custom opportunity breakdown each month.</p>
+
             <ul class="features">
-              <li><span class="check">✓</span><span data-lang="en">Everything in Pro</span><span data-lang="zh">包含专业版全部内容</span></li>
-              <li><span class="check">✓</span><span data-lang="en">1 custom breakdown/month</span><span data-lang="zh">每月 1 个定制拆解</span></li>
-              <li><span class="check">✓</span><span data-lang="en">Landing page angle</span><span data-lang="zh">落地页定位角度</span></li>
-              <li><span class="check">✓</span><span data-lang="en">Launch reply scripts</span><span data-lang="zh">推广回复话术</span></li>
+              <li><span class="check">✓</span><span>Everything in Pro</span></li>
+              <li><span class="check">✓</span><span>1 custom breakdown/month</span></li>
+              <li><span class="check">✓</span><span>Landing page angle</span></li>
+              <li><span class="check">✓</span><span>Launch reply scripts</span></li>
             </ul>
             <button class="button secondary plan-trigger" type="button" data-plan="studio">
-              <span data-lang="en">Apply for Studio</span>
-              <span data-lang="zh">申请工作室版</span>
+              <span>Apply for Studio</span>
+
             </button>
           </article>
         </div>
         <div class="payment-note">
-          <span data-lang="en">Subscription note: prepaid monthly access, no automatic renewal. Activation starts after payment proof and delivery preferences are submitted.</span>
-          <span data-lang="zh">订阅说明：按月预付费开通，不自动续费。提交付款凭证和接收偏好后开始开通。</span>
+          <span>Subscription note: prepaid monthly access, no automatic renewal. Activation starts after payment proof and delivery preferences are submitted.</span>
+
         </div>
       </div>
     </section>
@@ -2236,63 +2359,93 @@
     <section id="activation">
       <div class="wrap">
         <div class="section-head">
-          <h2 data-lang="en">How activation works.</h2>
-          <h2 data-lang="zh">购买后如何开通。</h2>
-          <p data-lang="en">Submit your delivery details after payment. We confirm the order and start sending the reports included in your plan.</p>
-          <p data-lang="zh">付款后提交接收信息。我们确认订单后，会按套餐内容开始发送对应报告。</p>
+          <h2>How activation works.</h2>
+
+          <p>Submit your delivery details after payment. We confirm the order and start sending the reports included in your plan.</p>
+
         </div>
         <div class="process-grid">
           <article class="process-card">
             <div class="num">1</div>
-            <h3 data-lang="en">Pay with Alipay</h3>
-            <h3 data-lang="zh">支付宝付款</h3>
-            <p data-lang="en">Choose a plan and complete payment with Alipay. Access is prepaid monthly and does not renew automatically.</p>
-            <p data-lang="zh">选择套餐并用支付宝付款。当前为按月预付费开通，不自动续费。</p>
+            <h3>Pay with Alipay</h3>
+
+            <p>Choose a plan and complete payment with Alipay. Access is prepaid monthly and does not renew automatically.</p>
+
           </article>
           <article class="process-card">
             <div class="num">2</div>
-            <h3 data-lang="en">Submit activation details</h3>
-            <h3 data-lang="zh">提交开通信息</h3>
-            <p data-lang="en">After payment, submit your email, plan, language, report frequency, categories, payer name, and payment screenshot.</p>
-            <p data-lang="zh">付款后提交邮箱、套餐、语言、报告频率、关注品类、付款昵称和付款截图。</p>
+            <h3>Submit activation details</h3>
+
+            <p>After payment, submit your email, plan, report frequency, categories, payer name, and payment screenshot.</p>
+
           </article>
           <article class="process-card">
             <div class="num">3</div>
-            <h3 data-lang="en">Receive reports</h3>
-            <h3 data-lang="zh">开始接收报告</h3>
-            <p data-lang="en">Access is activated within 24 hours. You receive the daily signals, weekly PDFs, or custom breakdowns included in your plan.</p>
-            <p data-lang="zh">24 小时内完成开通。你会收到所选套餐包含的日报、周报或定制拆解。</p>
+            <h3>Receive reports</h3>
+
+            <p>Access is activated within 24 hours. You receive the daily signals, weekly PDFs, or custom breakdowns included in your plan.</p>
+
           </article>
         </div>
         <div style="margin-top:18px;">
           <ul class="activation-list">
-            <li><b>1</b><span data-lang="en">Email address for delivery</span><span data-lang="zh">接收报告的邮箱</span></li>
-            <li><b>2</b><span data-lang="en">Purchased plan: Weekly, Pro, or Studio</span><span data-lang="zh">购买套餐：周报版、专业版或工作室版</span></li>
-            <li><b>3</b><span data-lang="en">Language preference: English or Chinese</span><span data-lang="zh">语言偏好：英文或中文</span></li>
-            <li><b>4</b><span data-lang="en">Report cadence: daily, weekly, or both</span><span data-lang="zh">报告频率：每日、每周或两者都要</span></li>
-            <li><b>5</b><span data-lang="en">Preferred categories, or leave blank for all categories</span><span data-lang="zh">关注品类；不填写则默认全品类</span></li>
-            <li><b>6</b><span data-lang="en">Alipay payer name and payment screenshot</span><span data-lang="zh">支付宝付款昵称和付款截图</span></li>
+            <li><b>1</b><span>Email address for delivery</span></li>
+            <li><b>2</b><span>Purchased plan: Weekly, Pro, or Studio</span></li>
+            <li><b>3</b><span>Report cadence: daily, weekly, or both</span></li>
+            <li><b>4</b><span>Preferred categories, or leave blank for all categories</span></li>
+            <li><b>5</b><span>Alipay payer name and payment screenshot</span></li>
           </ul>
           <div class="form-purpose activation-contact">
-            <strong data-lang="en">Activation details</strong>
-            <strong data-lang="zh">开通信息</strong>
-            <p data-lang="en">After payment, submit the activation form with your delivery email and payment screenshot. We activate access within 24 hours.</p>
-            <p data-lang="zh">付款后请提交开通信息，填写接收邮箱并上传付款截图。我们会在 24 小时内完成开通。</p>
+            <strong>Activation details</strong>
+
+            <p>After payment, submit the activation form with your delivery email and payment screenshot. We activate access within 24 hours.</p>
+
           </div>
           <div class="payment-actions">
             <button class="button plan-trigger" type="button" data-plan="pro">
-              <span data-lang="en">Open Subscription Checkout</span>
-              <span data-lang="zh">打开订阅付款</span>
+              <span>Open Subscription Checkout</span>
+
             </button>
             <a class="button" href="https://tally.so/r/kdx0G6" target="_blank" rel="noopener">
-              <span data-lang="en">Submit Activation Details</span>
-              <span data-lang="zh">提交开通信息</span>
+              <span>Submit Activation Details</span>
+
             </a>
             <a class="support-link" href="mailto:lee271420@gmail.com?subject=Opportunity%20Intel%20activation%20support">
-              <span data-lang="en">Having trouble? Email activation support.</span>
-              <span data-lang="zh">无法提交信息？邮件联系开通支持。</span>
+              <span>Having trouble? Email activation support.</span>
+
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-standard">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Service standards and delivery policy.</h2>
+          <p>Opportunity Intel is a founder-operated research subscription with clear delivery rules, transparent billing, and direct support.</p>
+        </div>
+        <div class="standard-grid">
+          <article class="standard-card">
+            <b>01</b>
+            <h3>Evidence threshold</h3>
+            <p>Signals are selected from visible user complaints, repeated workarounds, buyer clarity, and recent community activity.</p>
+          </article>
+          <article class="standard-card">
+            <b>02</b>
+            <h3>Delivery schedule</h3>
+            <p>Weekly subscribers receive one PDF issue per week. Pro includes daily signals plus the weekly deep report.</p>
+          </article>
+          <article class="standard-card">
+            <b>03</b>
+            <h3>Prepaid access</h3>
+            <p>Plans are prepaid monthly and do not renew automatically. You can renew manually before access expires.</p>
+          </article>
+          <article class="standard-card">
+            <b>04</b>
+            <h3>Support contact</h3>
+            <p>Activation and delivery support is handled by email at lee271420@gmail.com within one business day.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -2300,35 +2453,35 @@
     <section id="faq">
       <div class="wrap">
         <div class="section-head">
-          <h2 data-lang="en">Questions before subscribing.</h2>
-          <h2 data-lang="zh">订阅前常见问题。</h2>
-          <p data-lang="en">The service is built for people who want evidence-backed product opportunities, not random inspiration.</p>
-          <p data-lang="zh">这个服务适合想基于真实证据找机会的人，而不是只想收藏随机点子的人。</p>
+          <h2>Questions before subscribing.</h2>
+
+          <p>The service is built for people who want evidence-backed product opportunities, not random inspiration.</p>
+
         </div>
         <div class="faq-grid">
           <article class="faq-item">
-            <h3 data-lang="en">Is this just an idea list?</h3>
-            <h3 data-lang="zh">这只是点子列表吗？</h3>
-            <p data-lang="en">No. Every opportunity includes source evidence, pain analysis, current workaround, target user, MVP scope, pricing suggestion, and launch angle.</p>
-            <p data-lang="zh">不是。每个机会都包含来源证据、痛点分析、现有替代方案、目标用户、MVP 范围、定价建议和推广角度。</p>
+            <h3>Is this just an idea list?</h3>
+
+            <p>No. Every opportunity includes source evidence, pain analysis, current workaround, target user, MVP scope, pricing suggestion, and launch angle.</p>
+
           </article>
           <article class="faq-item">
-            <h3 data-lang="en">Can I choose only AI or DevTools?</h3>
-            <h3 data-lang="zh">可以只选择 AI 或开发者工具吗？</h3>
-            <p data-lang="en">Yes. You can choose categories after payment. If you do not choose, we send the all-category feed.</p>
-            <p data-lang="zh">可以。付款后可选择品类；如果不选，默认发送全品类报告。</p>
+            <h3>Can I choose only AI or DevTools?</h3>
+
+            <p>Yes. You can choose categories after payment. If you do not choose, we send the all-category feed.</p>
+
           </article>
           <article class="faq-item">
-            <h3 data-lang="en">When will I receive the reports?</h3>
-            <h3 data-lang="zh">什么时候收到报告？</h3>
-            <p data-lang="en">Weekly subscribers receive one PDF report per week. Pro subscribers receive daily signal emails and a weekly deep report.</p>
-            <p data-lang="zh">周报版每周收到一份 PDF；专业版每天收到机会邮件，每周收到深度报告。</p>
+            <h3>When will I receive the reports?</h3>
+
+            <p>Weekly subscribers receive one PDF report per week. Pro subscribers receive daily signal emails and a weekly deep report.</p>
+
           </article>
           <article class="faq-item">
-            <h3 data-lang="en">Is payment recurring?</h3>
-            <h3 data-lang="zh">会自动续费吗？</h3>
-            <p data-lang="en">No. Access is prepaid and does not renew automatically. You can renew manually before the access period ends.</p>
-            <p data-lang="zh">不会。当前采用预付费开通，不自动续费。到期前可手动续费。</p>
+            <h3>Is payment recurring?</h3>
+
+            <p>No. Access is prepaid and does not renew automatically. You can renew manually before the access period ends.</p>
+
           </article>
         </div>
       </div>
@@ -2337,14 +2490,14 @@
     <section class="footer-cta">
       <div class="wrap cta-box">
         <div>
-          <h2 data-lang="en">Stop collecting random ideas. Start reviewing validated signals.</h2>
-          <h2 data-lang="zh">别再收藏随机点子，开始筛选被验证过的需求信号。</h2>
-          <p data-lang="en">Every report is designed to help you decide what to build, who it is for, why now, and how to test demand before writing too much code.</p>
-          <p data-lang="zh">每份报告都帮助你判断做什么、卖给谁、为什么现在值得做，以及如何在写太多代码之前验证需求。</p>
+          <h2>Stop collecting random ideas. Start reviewing validated signals.</h2>
+
+          <p>Every report is designed to help you decide what to build, who it is for, why now, and how to test demand before writing too much code.</p>
+
         </div>
         <button class="button plan-trigger" type="button" data-plan="pro">
-          <span data-lang="en">Subscribe Today</span>
-          <span data-lang="zh">立即订阅</span>
+          <span>Subscribe Today</span>
+
         </button>
       </div>
     </section>
@@ -2355,62 +2508,62 @@
     <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-describedby="checkoutDescription">
       <button class="modal-close" type="button" aria-label="Close checkout" data-close-modal>&times;</button>
       <div class="checkout-head">
-        <span class="modal-kicker" data-lang="en">Alipay checkout</span>
-        <span class="modal-kicker" data-lang="zh">支付宝付款</span>
-        <h2 id="checkoutTitle" data-lang="en">Complete your subscription.</h2>
-        <h2 data-lang="zh">完成订阅付款。</h2>
-        <p id="checkoutDescription" data-lang="en">Choose the matching amount in Alipay, then submit the activation form so we know where to send your daily emails and weekly reports.</p>
-        <p data-lang="zh">请在支付宝中按所选套餐输入对应金额，付款后提交开通表单，方便我们发送日报和周报。</p>
+        <span class="modal-kicker">Alipay checkout</span>
+
+        <h2 id="checkoutTitle">Complete your subscription.</h2>
+
+        <p id="checkoutDescription">Choose the matching amount in Alipay, then submit the activation form so we know where to send your daily emails and weekly reports.</p>
+
       </div>
 
       <div class="checkout-grid">
         <article class="checkout-summary">
           <div class="selected-plan">
             <div>
-              <span data-lang="en">Selected plan</span>
-              <span data-lang="zh">当前选择</span>
+              <span>Selected plan</span>
+
               <strong id="modalPlanName">Pro</strong>
               <p id="modalPlanSummary">Daily signal email, weekly PDF, category preferences, and launch copy angles.</p>
             </div>
             <div class="selected-amount" id="modalPlanAmount">¥199</div>
           </div>
           <ul class="checkout-steps">
-            <li><b>1</b><span data-lang="en">Scan the Alipay QR code and enter the selected amount manually.</span><span data-lang="zh">扫码支付宝收款码，并手动输入所选套餐金额。</span></li>
-            <li><b>2</b><span data-lang="en">Submit activation details with email, plan, language, categories, payer name, and screenshot.</span><span data-lang="zh">提交开通信息，填写邮箱、套餐、语言、品类、付款昵称和截图。</span></li>
+            <li><b>1</b><span>Scan the Alipay QR code and enter the selected amount manually.</span></li>
+            <li><b>2</b><span>Submit activation details with email, plan, categories, payer name, and screenshot.</span></li>
             <li><b>3</b><span id="modalDeliveryLine">Access is activated within 24 hours. Pro receives daily signals plus the weekly PDF report.</span></li>
           </ul>
           <div class="trust-note">
-            <span data-lang="en">Subscription note: prepaid monthly access, no automatic renewal. If anything goes wrong, email lee271420@gmail.com with your payment screenshot.</span>
-            <span data-lang="zh">订阅说明：按月预付费开通，不自动续费。如遇问题，请把付款截图发送到 lee271420@gmail.com。</span>
+            <span>Subscription note: prepaid monthly access, no automatic renewal. If anything goes wrong, email lee271420@gmail.com with your payment screenshot.</span>
+
           </div>
         </article>
 
         <article class="checkout-pay">
-          <h3 data-lang="en">Pay with Alipay</h3>
-          <h3 data-lang="zh">支付宝付款</h3>
+          <h3>Pay with Alipay</h3>
+
           <p>
-            <span data-lang="en">Selected plan:</span>
-            <span data-lang="zh">当前套餐：</span>
+            <span>Selected plan:</span>
+
             <strong id="modalPayPlan">Pro</strong>
           </p>
-          <p data-lang="en">Use Alipay scan and pay the exact amount shown below.</p>
-          <p data-lang="zh">请使用支付宝扫码，并支付下方显示的对应金额。</p>
+          <p>Use Alipay scan and pay the exact amount shown below.</p>
+
           <div class="checkout-amount">
-            <span data-lang="en">Amount to pay</span>
-            <span data-lang="zh">应付金额</span>
+            <span>Amount to pay</span>
+
             <strong id="modalAmountDue">¥199</strong>
           </div>
           <div class="qr-frame">
-            <img class="alipay-qr" src="assets/alipay-qr.jpg" alt="Alipay payment QR code">
+            <img class="alipay-qr" src="assets/alipay-qr-crop.jpg" alt="Alipay payment QR code">
           </div>
           <div class="checkout-actions">
             <a class="button" href="https://tally.so/r/kdx0G6" target="_blank" rel="noopener">
-              <span data-lang="en">Submit Activation Form</span>
-              <span data-lang="zh">提交开通表单</span>
+              <span>Submit Activation Form</span>
+
             </a>
             <a class="support-link" href="mailto:lee271420@gmail.com?subject=Opportunity%20Intel%20activation%20support">
-              <span data-lang="en">Having trouble? Email activation support.</span>
-              <span data-lang="zh">无法提交表单？邮件联系开通支持。</span>
+              <span>Having trouble? Email activation support.</span>
+
             </a>
           </div>
         </article>
@@ -2419,8 +2572,6 @@
   </div>
 
   <script>
-    const enBtn = document.getElementById('enBtn');
-    const zhBtn = document.getElementById('zhBtn');
     const checkoutModal = document.getElementById('checkoutModal');
     const modalPlanName = document.getElementById('modalPlanName');
     const modalPlanSummary = document.getElementById('modalPlanSummary');
@@ -2437,70 +2588,37 @@
     const planDetails = {
       weekly: {
         amount: '¥99',
-        name: { en: 'Weekly', zh: '周报版' },
-        summary: {
-          en: 'One focused weekly PDF with 10 opportunities, pain evidence, and MVP angles.',
-          zh: '每周一份深度 PDF，包含 10 个机会、痛点证据和 MVP 角度。'
-        },
-        delivery: {
-          en: 'Access is activated within 24 hours. Weekly subscribers receive one deep PDF report every week.',
-          zh: '24 小时内完成开通。周报版用户每周收到一份 PDF 深度报告。'
-        }
+        name: 'Weekly',
+        summary: 'One focused weekly PDF with 10 opportunities, pain evidence, and MVP angles.',
+        delivery: 'Access is activated within 24 hours. Weekly subscribers receive one deep PDF report every week.'
       },
       pro: {
         amount: '¥199',
-        name: { en: 'Pro', zh: '专业版' },
-        summary: {
-          en: 'Daily signal email, weekly PDF, category preferences, and launch copy angles.',
-          zh: '每日机会邮件、每周 PDF、品类偏好推送和推广文案角度。'
-        },
-        delivery: {
-          en: 'Access is activated within 24 hours. Pro subscribers receive daily signals plus the weekly PDF report.',
-          zh: '24 小时内完成开通。专业版用户会收到每日信号和每周 PDF 报告。'
-        }
+        name: 'Pro',
+        summary: 'Daily signal email, weekly PDF, category preferences, and launch copy angles.',
+        delivery: 'Access is activated within 24 hours. Pro subscribers receive daily signals plus the weekly PDF report.'
       },
       studio: {
         amount: '¥999',
-        name: { en: 'Studio', zh: '工作室版' },
-        summary: {
-          en: 'Everything in Pro plus one custom opportunity breakdown each month.',
-          zh: '包含专业版全部内容，并增加每月 1 个定制机会拆解。'
-        },
-        delivery: {
-          en: 'Access is activated within 24 hours. Studio includes Pro delivery plus one custom opportunity breakdown each month.',
-          zh: '24 小时内完成开通。工作室版包含专业版全部内容，并每月增加 1 个定制机会拆解。'
-        }
+        name: 'Studio',
+        summary: 'Everything in Pro plus one custom opportunity breakdown each month.',
+        delivery: 'Access is activated within 24 hours. Studio includes Pro delivery plus one custom opportunity breakdown each month.'
       }
     };
 
-    function currentLang() {
-      return document.body.classList.contains('zh') ? 'zh' : 'en';
-    }
-
     function updatePlanDisplay(plan = selectedPlan) {
       selectedPlan = planDetails[plan] ? plan : 'pro';
-      const lang = currentLang();
       const detail = planDetails[selectedPlan];
-      modalPlanName.textContent = detail.name[lang];
-      modalPayPlan.textContent = detail.name[lang];
-      modalPlanSummary.textContent = detail.summary[lang];
+      modalPlanName.textContent = detail.name;
+      modalPayPlan.textContent = detail.name;
+      modalPlanSummary.textContent = detail.summary;
       modalPlanAmount.textContent = detail.amount;
       modalAmountDue.textContent = detail.amount;
-      modalDeliveryLine.textContent = detail.delivery[lang];
+      modalDeliveryLine.textContent = detail.delivery;
       planCards.forEach((card) => {
         card.classList.toggle('active-plan', card.dataset.planCard === selectedPlan);
       });
     }
-
-    function setLang(lang) {
-      document.body.classList.toggle('zh', lang === 'zh');
-      enBtn.classList.toggle('active', lang === 'en');
-      zhBtn.classList.toggle('active', lang === 'zh');
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-      updatePlanDisplay();
-    }
-    enBtn.addEventListener('click', () => setLang('en'));
-    zhBtn.addEventListener('click', () => setLang('zh'));
 
     function openCheckout(plan) {
       updatePlanDisplay(plan);
