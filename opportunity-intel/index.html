@@ -1493,13 +1493,33 @@
       margin-top: 14px;
     }
 
+    .support-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      text-decoration: none;
+      width: fit-content;
+    }
+
+    .support-link:hover {
+      color: var(--ink);
+      text-decoration: underline;
+    }
+
+    .checkout-actions .support-link {
+      justify-self: center;
+      text-align: center;
+    }
+
     .checkout-pay .qr-frame {
       padding: 12px;
     }
 
     .checkout-pay .alipay-qr {
-      width: min(100%, 300px);
-      max-height: 340px;
+      width: min(100%, 280px);
+      max-height: 310px;
     }
 
     .checkout-actions .button {
@@ -1675,8 +1695,8 @@
         font-size: 26px;
       }
       .checkout-pay .alipay-qr {
-        width: min(100%, 260px);
-        max-height: 292px;
+        width: min(100%, 245px);
+        max-height: 270px;
       }
       .qr-frame { padding: 10px; }
       .amount-row {
@@ -2146,8 +2166,8 @@
         <div class="section-head">
           <h2 data-lang="en">Start with monthly access. Upgrade anytime.</h2>
           <h2 data-lang="zh">先按月开通，随时升级套餐。</h2>
-          <p data-lang="en">Version one uses Alipay manual activation. After payment, submit the Tally activation form to receive reports.</p>
-          <p data-lang="zh">第一版采用支付宝付款 + 人工开通。付款后提交 Tally 开通表单，即可开始接收报告。</p>
+          <p data-lang="en">Payment is handled through Alipay. After payment, submit your activation details so reports are delivered to the right inbox.</p>
+          <p data-lang="zh">当前支持支付宝付款。付款后提交开通信息，我们会按你的邮箱、语言和品类偏好发送报告。</p>
         </div>
 
         <div class="pricing">
@@ -2207,8 +2227,8 @@
           </article>
         </div>
         <div class="payment-note">
-          <span data-lang="en">MVP payment note: prepaid monthly access, no auto-renewal. Activation starts after payment proof and delivery preferences are submitted.</span>
-          <span data-lang="zh">MVP 支付说明：预付费按月开通，不做自动续费。提交付款凭证和接收偏好后开始开通。</span>
+          <span data-lang="en">Subscription note: prepaid monthly access, no automatic renewal. Activation starts after payment proof and delivery preferences are submitted.</span>
+          <span data-lang="zh">订阅说明：按月预付费开通，不自动续费。提交付款凭证和接收偏好后开始开通。</span>
         </div>
       </div>
     </section>
@@ -2218,21 +2238,21 @@
         <div class="section-head">
           <h2 data-lang="en">How activation works.</h2>
           <h2 data-lang="zh">购买后如何开通。</h2>
-          <p data-lang="en">Keep the first version simple: collect payment, collect email, deliver reports manually or semi-automatically.</p>
-          <p data-lang="zh">第一版保持简单：先收款，再收集邮箱，然后人工或半自动发送报告。</p>
+          <p data-lang="en">Submit your delivery details after payment. We confirm the order and start sending the reports included in your plan.</p>
+          <p data-lang="zh">付款后提交接收信息。我们确认订单后，会按套餐内容开始发送对应报告。</p>
         </div>
         <div class="process-grid">
           <article class="process-card">
             <div class="num">1</div>
             <h3 data-lang="en">Pay with Alipay</h3>
             <h3 data-lang="zh">支付宝付款</h3>
-            <p data-lang="en">Choose a plan and complete payment with Alipay. No auto-renewal is required in the MVP version.</p>
-            <p data-lang="zh">选择套餐并用支付宝付款。MVP 版本不做自动续费，按月卡、季卡、年卡开通。</p>
+            <p data-lang="en">Choose a plan and complete payment with Alipay. Access is prepaid monthly and does not renew automatically.</p>
+            <p data-lang="zh">选择套餐并用支付宝付款。当前为按月预付费开通，不自动续费。</p>
           </article>
           <article class="process-card">
             <div class="num">2</div>
-            <h3 data-lang="en">Submit the Tally form</h3>
-            <h3 data-lang="zh">提交 Tally 表单</h3>
+            <h3 data-lang="en">Submit activation details</h3>
+            <h3 data-lang="zh">提交开通信息</h3>
             <p data-lang="en">After payment, submit your email, plan, language, report frequency, categories, payer name, and payment screenshot.</p>
             <p data-lang="zh">付款后提交邮箱、套餐、语言、报告频率、关注品类、付款昵称和付款截图。</p>
           </article>
@@ -2240,8 +2260,8 @@
             <div class="num">3</div>
             <h3 data-lang="en">Receive reports</h3>
             <h3 data-lang="zh">开始接收报告</h3>
-            <p data-lang="en">Access is activated within 24 hours. Pro users receive daily signal emails plus weekly PDF reports.</p>
-            <p data-lang="zh">24 小时内开通。专业版用户会收到每日机会邮件和每周 PDF 深度报告。</p>
+            <p data-lang="en">Access is activated within 24 hours. You receive the daily signals, weekly PDFs, or custom breakdowns included in your plan.</p>
+            <p data-lang="zh">24 小时内完成开通。你会收到所选套餐包含的日报、周报或定制拆解。</p>
           </article>
         </div>
         <div style="margin-top:18px;">
@@ -2254,10 +2274,10 @@
             <li><b>6</b><span data-lang="en">Alipay payer name and payment screenshot</span><span data-lang="zh">支付宝付款昵称和付款截图</span></li>
           </ul>
           <div class="form-purpose activation-contact">
-            <strong data-lang="en">Current MVP activation</strong>
-            <strong data-lang="zh">当前 MVP 开通方式</strong>
-            <p data-lang="en">After payment, submit the Tally form. If the form does not work, copy the email template and send it with your payment screenshot to lee271420@gmail.com. We activate access within 24 hours.</p>
-            <p data-lang="zh">付款后优先提交 Tally 表单。如果表单打不开，可复制邮件模板，连同付款截图一起发送到 lee271420@gmail.com。我们会在 24 小时内完成开通。</p>
+            <strong data-lang="en">Activation details</strong>
+            <strong data-lang="zh">开通信息</strong>
+            <p data-lang="en">After payment, submit the activation form with your delivery email and payment screenshot. We activate access within 24 hours.</p>
+            <p data-lang="zh">付款后请提交开通信息，填写接收邮箱并上传付款截图。我们会在 24 小时内完成开通。</p>
           </div>
           <div class="payment-actions">
             <button class="button plan-trigger" type="button" data-plan="pro">
@@ -2265,18 +2285,13 @@
               <span data-lang="zh">打开订阅付款</span>
             </button>
             <a class="button" href="https://tally.so/r/kdx0G6" target="_blank" rel="noopener">
-              <span data-lang="en">Submit Tally Form</span>
-              <span data-lang="zh">提交 Tally 表单</span>
+              <span data-lang="en">Submit Activation Details</span>
+              <span data-lang="zh">提交开通信息</span>
             </a>
-            <button class="button secondary" type="button" id="copyActivation">
-              <span data-lang="en">Copy Activation Template</span>
-              <span data-lang="zh">复制开通模板</span>
-            </button>
-            <a class="button secondary" href="mailto:lee271420@gmail.com?subject=Opportunity%20Intel%20activation&body=Email%20for%20delivery%3A%0APlan%3A%20Weekly%20%2F%20Pro%20%2F%20Studio%0ALanguage%3A%20English%20%2F%20Chinese%0AReport%20cadence%3A%20Daily%20%2F%20Weekly%20%2F%20Both%0APreferred%20categories%3A%0AAlipay%20payer%20name%3A%0APayment%20amount%3A%20%C2%A599%20%2F%20%C2%A5199%20%2F%20%C2%A5999%0APayment%20screenshot%3A%20attached">
-              <span data-lang="en">Email Activation</span>
-              <span data-lang="zh">邮件开通</span>
+            <a class="support-link" href="mailto:lee271420@gmail.com?subject=Opportunity%20Intel%20activation%20support">
+              <span data-lang="en">Having trouble? Email activation support.</span>
+              <span data-lang="zh">无法提交信息？邮件联系开通支持。</span>
             </a>
-            <span class="copy-status" id="copyStatus" aria-live="polite"></span>
           </div>
         </div>
       </div>
@@ -2312,8 +2327,8 @@
           <article class="faq-item">
             <h3 data-lang="en">Is payment recurring?</h3>
             <h3 data-lang="zh">会自动续费吗？</h3>
-            <p data-lang="en">The MVP uses prepaid access, not auto-renewal. You can renew manually before the access period ends.</p>
-            <p data-lang="zh">MVP 阶段采用预付费开通，不做自动续费。到期前可手动续费。</p>
+            <p data-lang="en">No. Access is prepaid and does not renew automatically. You can renew manually before the access period ends.</p>
+            <p data-lang="zh">不会。当前采用预付费开通，不自动续费。到期前可手动续费。</p>
           </article>
         </div>
       </div>
@@ -2340,8 +2355,8 @@
     <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-describedby="checkoutDescription">
       <button class="modal-close" type="button" aria-label="Close checkout" data-close-modal>&times;</button>
       <div class="checkout-head">
-        <span class="modal-kicker" data-lang="en">Manual Alipay checkout</span>
-        <span class="modal-kicker" data-lang="zh">支付宝人工开通</span>
+        <span class="modal-kicker" data-lang="en">Alipay checkout</span>
+        <span class="modal-kicker" data-lang="zh">支付宝付款</span>
         <h2 id="checkoutTitle" data-lang="en">Complete your subscription.</h2>
         <h2 data-lang="zh">完成订阅付款。</h2>
         <p id="checkoutDescription" data-lang="en">Choose the matching amount in Alipay, then submit the activation form so we know where to send your daily emails and weekly reports.</p>
@@ -2361,12 +2376,12 @@
           </div>
           <ul class="checkout-steps">
             <li><b>1</b><span data-lang="en">Scan the Alipay QR code and enter the selected amount manually.</span><span data-lang="zh">扫码支付宝收款码，并手动输入所选套餐金额。</span></li>
-            <li><b>2</b><span data-lang="en">Submit the Tally activation form with email, plan, language, categories, payer name, and screenshot.</span><span data-lang="zh">提交 Tally 开通表单，填写邮箱、套餐、语言、品类、付款昵称和截图。</span></li>
-            <li><b>3</b><span data-lang="en">Access is activated within 24 hours. Pro receives daily signals plus the weekly PDF report.</span><span data-lang="zh">24 小时内完成开通。专业版会收到每日信号和每周 PDF 报告。</span></li>
+            <li><b>2</b><span data-lang="en">Submit activation details with email, plan, language, categories, payer name, and screenshot.</span><span data-lang="zh">提交开通信息，填写邮箱、套餐、语言、品类、付款昵称和截图。</span></li>
+            <li><b>3</b><span id="modalDeliveryLine">Access is activated within 24 hours. Pro receives daily signals plus the weekly PDF report.</span></li>
           </ul>
           <div class="trust-note">
-            <span data-lang="en">MVP note: prepaid monthly access, no auto-renewal. If anything goes wrong, email lee271420@gmail.com with your screenshot.</span>
-            <span data-lang="zh">MVP 说明：按月预付费开通，不自动续费。如遇问题，请把付款截图发送到 lee271420@gmail.com。</span>
+            <span data-lang="en">Subscription note: prepaid monthly access, no automatic renewal. If anything goes wrong, email lee271420@gmail.com with your payment screenshot.</span>
+            <span data-lang="zh">订阅说明：按月预付费开通，不自动续费。如遇问题，请把付款截图发送到 lee271420@gmail.com。</span>
           </div>
         </article>
 
@@ -2393,15 +2408,10 @@
               <span data-lang="en">Submit Activation Form</span>
               <span data-lang="zh">提交开通表单</span>
             </a>
-            <button class="button secondary" type="button" id="copyActivationModal">
-              <span data-lang="en">Copy Email Template</span>
-              <span data-lang="zh">复制邮件模板</span>
-            </button>
-            <a class="button secondary" href="mailto:lee271420@gmail.com?subject=Opportunity%20Intel%20activation&body=Email%20for%20delivery%3A%0APlan%3A%20Weekly%20%2F%20Pro%20%2F%20Studio%0ALanguage%3A%20English%20%2F%20Chinese%0AReport%20cadence%3A%20Daily%20%2F%20Weekly%20%2F%20Both%0APreferred%20categories%3A%0AAlipay%20payer%20name%3A%0APayment%20amount%3A%20%C2%A599%20%2F%20%C2%A5199%20%2F%20%C2%A5999%0APayment%20screenshot%3A%20attached">
-              <span data-lang="en">Email Us Instead</span>
-              <span data-lang="zh">邮件联系开通</span>
+            <a class="support-link" href="mailto:lee271420@gmail.com?subject=Opportunity%20Intel%20activation%20support">
+              <span data-lang="en">Having trouble? Email activation support.</span>
+              <span data-lang="zh">无法提交表单？邮件联系开通支持。</span>
             </a>
-            <span class="copy-status" id="copyStatusModal" aria-live="polite"></span>
           </div>
         </article>
       </div>
@@ -2417,6 +2427,7 @@
     const modalPlanAmount = document.getElementById('modalPlanAmount');
     const modalPayPlan = document.getElementById('modalPayPlan');
     const modalAmountDue = document.getElementById('modalAmountDue');
+    const modalDeliveryLine = document.getElementById('modalDeliveryLine');
     const planCards = document.querySelectorAll('[data-plan-card]');
     const planButtons = document.querySelectorAll('.plan-trigger');
     const categoryButtons = document.querySelectorAll('.category');
@@ -2430,6 +2441,10 @@
         summary: {
           en: 'One focused weekly PDF with 10 opportunities, pain evidence, and MVP angles.',
           zh: '每周一份深度 PDF，包含 10 个机会、痛点证据和 MVP 角度。'
+        },
+        delivery: {
+          en: 'Access is activated within 24 hours. Weekly subscribers receive one deep PDF report every week.',
+          zh: '24 小时内完成开通。周报版用户每周收到一份 PDF 深度报告。'
         }
       },
       pro: {
@@ -2438,6 +2453,10 @@
         summary: {
           en: 'Daily signal email, weekly PDF, category preferences, and launch copy angles.',
           zh: '每日机会邮件、每周 PDF、品类偏好推送和推广文案角度。'
+        },
+        delivery: {
+          en: 'Access is activated within 24 hours. Pro subscribers receive daily signals plus the weekly PDF report.',
+          zh: '24 小时内完成开通。专业版用户会收到每日信号和每周 PDF 报告。'
         }
       },
       studio: {
@@ -2446,6 +2465,10 @@
         summary: {
           en: 'Everything in Pro plus one custom opportunity breakdown each month.',
           zh: '包含专业版全部内容，并增加每月 1 个定制机会拆解。'
+        },
+        delivery: {
+          en: 'Access is activated within 24 hours. Studio includes Pro delivery plus one custom opportunity breakdown each month.',
+          zh: '24 小时内完成开通。工作室版包含专业版全部内容，并每月增加 1 个定制机会拆解。'
         }
       }
     };
@@ -2463,6 +2486,7 @@
       modalPlanSummary.textContent = detail.summary[lang];
       modalPlanAmount.textContent = detail.amount;
       modalAmountDue.textContent = detail.amount;
+      modalDeliveryLine.textContent = detail.delivery[lang];
       planCards.forEach((card) => {
         card.classList.toggle('active-plan', card.dataset.planCard === selectedPlan);
       });
@@ -2477,77 +2501,6 @@
     }
     enBtn.addEventListener('click', () => setLang('en'));
     zhBtn.addEventListener('click', () => setLang('zh'));
-
-    const copyActivation = document.getElementById('copyActivation');
-    const copyStatus = document.getElementById('copyStatus');
-    const copyActivationModal = document.getElementById('copyActivationModal');
-    const copyStatusModal = document.getElementById('copyStatusModal');
-
-    function activationTemplate(lang) {
-      const detail = planDetails[selectedPlan];
-      const planName = detail.name[lang];
-      const lines = lang === 'zh' ? [
-        'Opportunity Intel 开通信息',
-        '',
-        '优先提交表单：https://tally.so/r/kdx0G6',
-        '',
-        '接收报告邮箱：',
-        `购买套餐：${planName}`,
-        '语言偏好：英文 / 中文',
-        '报告频率：每日 / 每周 / 两者都要',
-        '关注品类：全品类 / AI 工具 / 开发者工具 / 效率工具 / B2B SaaS / 创作者经济 / 营销 / 电商 / 教育 / 健康与生活方式',
-        '支付宝付款昵称：',
-        `付款金额：${detail.amount}`,
-        '付款截图：已附',
-        '',
-        '邮箱备用：lee271420@gmail.com'
-      ] : [
-        'Opportunity Intel activation',
-        '',
-        'Preferred activation form: https://tally.so/r/kdx0G6',
-        '',
-        'Email for delivery:',
-        `Plan: ${planName}`,
-        'Language: English / Chinese',
-        'Report cadence: Daily / Weekly / Both',
-        'Preferred categories: All / AI Tools / Developer Tools / Productivity / B2B SaaS / Creator Economy / Marketing / E-commerce / Education / Health & Wellness',
-        'Alipay payer name:',
-        `Payment amount: ${detail.amount}`,
-        'Payment screenshot: attached',
-        '',
-        'Email fallback: lee271420@gmail.com'
-      ];
-
-      return lines.join('\n');
-    }
-
-    async function copyToClipboard(text) {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
-        return;
-      }
-      const textarea = document.createElement('textarea');
-      textarea.value = text;
-      textarea.setAttribute('readonly', '');
-      textarea.style.position = 'fixed';
-      textarea.style.opacity = '0';
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      textarea.remove();
-    }
-
-    async function handleCopy(statusElement) {
-      const lang = currentLang();
-      await copyToClipboard(activationTemplate(lang));
-      statusElement.textContent = lang === 'zh' ? '模板已复制' : 'Template copied';
-      window.setTimeout(() => {
-        statusElement.textContent = '';
-      }, 2200);
-    }
-
-    copyActivation.addEventListener('click', () => handleCopy(copyStatus));
-    copyActivationModal.addEventListener('click', () => handleCopy(copyStatusModal));
 
     function openCheckout(plan) {
       updatePlanDisplay(plan);
