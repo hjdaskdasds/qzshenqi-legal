@@ -1,0 +1,1198 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Opportunity Intel 是给中文独立开发者的海外社区需求雷达：从 Reddit 等社区筛选真实痛点，整理成产品机会、MVP 范围、定价建议和冷启动话术，支持支付宝订阅。">
+  <link rel="canonical" href="https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/">
+  <link rel="alternate" hreflang="en" href="https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/">
+  <title>海外社区机会情报 | 中文独立开发者的 Reddit 产品选题雷达</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #101413;
+      --muted: #5a6762;
+      --line: #d9e3de;
+      --paper: #ffffff;
+      --soft: #f4f8f6;
+      --green: #176b4d;
+      --green-soft: #e5f4ed;
+      --blue: #2457c5;
+      --blue-soft: #eaf0ff;
+      --coral: #c84c32;
+      --coral-soft: #fff0eb;
+      --gold: #9f6a06;
+      --gold-soft: #fff4d8;
+      --shadow: 0 18px 45px rgba(25, 43, 35, .12);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #fbfcfb;
+      color: var(--ink);
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    .wrap {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(251, 252, 251, .93);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      background: #173c2d;
+      color: #fff;
+      font-weight: 850;
+      font-size: 15px;
+    }
+    .brand strong,
+    .brand span {
+      display: block;
+      white-space: nowrap;
+    }
+    .brand strong {
+      font-size: 15px;
+      line-height: 1.1;
+    }
+    .brand span {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.82);
+      padding: 4px;
+      box-shadow: 0 6px 18px rgba(23, 42, 34, .04);
+    }
+    .nav-links a {
+      min-height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      padding: 0 10px;
+      color: #3d4b45;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 740;
+      white-space: nowrap;
+    }
+    .nav-links a:hover {
+      background: var(--soft);
+      color: var(--ink);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .trust-pill {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid #cbd8d1;
+      border-radius: 999px;
+      background: #fff;
+      color: #41514a;
+      padding: 0 11px;
+      font-size: 12px;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+    .trust-pill::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(23, 107, 77, .12);
+    }
+    .button {
+      min-height: 42px;
+      border-radius: 8px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      padding: 0 17px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      font: inherit;
+      font-weight: 760;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(17, 20, 20, .12);
+    }
+    .button.secondary {
+      background: #fff;
+      color: var(--ink);
+      border-color: var(--line);
+    }
+    .button.green {
+      background: var(--green);
+      border-color: var(--green);
+    }
+    .button:focus-visible,
+    .nav-links a:focus-visible,
+    .plan-tab:focus-visible {
+      outline: 3px solid rgba(36, 87, 197, .26);
+      outline-offset: 2px;
+    }
+
+    .hero {
+      padding: 58px 0 36px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.35), rgba(251,252,251,1)),
+        #fbfcfb;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(340px, 480px);
+      gap: 42px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      border: 1px solid #cbd8d1;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--green);
+      padding: 0 11px;
+      font-size: 13px;
+      font-weight: 780;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: 62px;
+      line-height: 1.03;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .lead {
+      margin: 22px 0 0;
+      max-width: 690px;
+      color: #40514a;
+      font-size: 19px;
+      line-height: 1.72;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .proof-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 30px;
+      max-width: 760px;
+    }
+    .proof {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 13px;
+    }
+    .proof b {
+      display: block;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+    .proof span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .report-card {
+      border: 1px solid #c9d5cf;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .report-top {
+      min-height: 72px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--soft);
+    }
+    .report-top strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+    .report-top span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 720;
+    }
+    .score-badge {
+      min-width: 66px;
+      min-height: 54px;
+      border: 1px solid #b9dfce;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 24px;
+      font-weight: 850;
+    }
+    .report-body {
+      padding: 20px;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .tag {
+      min-height: 26px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft);
+      padding: 0 9px;
+      color: #34473e;
+      font-size: 12px;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+    .tag.green { background: var(--green-soft); color: var(--green); border-color: #b9dfce; }
+    .tag.blue { background: var(--blue-soft); color: var(--blue); border-color: #cbd8ff; }
+    .tag.coral { background: var(--coral-soft); color: var(--coral); border-color: #ffd0c2; }
+    .tag.gold { background: var(--gold-soft); color: var(--gold); border-color: #f2d58d; }
+    .quote {
+      margin: 18px 0 0;
+      border-left: 3px solid var(--green);
+      background: #f8faf9;
+      padding: 8px 0 8px 13px;
+      color: #33423b;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .mini-plan {
+      margin: 18px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+    .mini-plan div {
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      gap: 9px;
+      color: #33423b;
+      font-size: 14px;
+      line-height: 1.42;
+    }
+    .num {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    section {
+      padding: 62px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    .section-head h2 {
+      margin: 0;
+      max-width: 720px;
+      font-size: 42px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      margin: 0;
+      max-width: 420px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .cards-3,
+    .cards-4,
+    .pricing {
+      display: grid;
+      gap: 14px;
+    }
+    .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card,
+    .price-card,
+    .pay-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(23, 42, 34, .05);
+    }
+    .card {
+      padding: 20px;
+      min-height: 226px;
+    }
+    .card h3,
+    .price-card h3,
+    .pay-panel h3 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.3;
+    }
+    .card p,
+    .price-card p,
+    .pay-panel p {
+      margin: 11px 0 0;
+      color: var(--muted);
+      line-height: 1.62;
+      font-size: 14px;
+    }
+    .card strong {
+      display: block;
+      margin-top: 16px;
+      color: var(--green);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .sample {
+      background: #f3f7f5;
+    }
+    .sample-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .82fr);
+      gap: 16px;
+      align-items: start;
+    }
+    .sample-list {
+      display: grid;
+      gap: 12px;
+    }
+    .signal {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 18px;
+    }
+    .signal h3 {
+      margin: 12px 0 8px;
+      font-size: 21px;
+      line-height: 1.25;
+    }
+    .signal p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.58;
+      font-size: 14px;
+    }
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .metric {
+      border-radius: 7px;
+      background: var(--soft);
+      padding: 10px;
+    }
+    .metric b {
+      display: block;
+      font-size: 16px;
+    }
+    .metric span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.3;
+    }
+    .sample-aside {
+      border: 1px solid #cbd8d1;
+      border-radius: 8px;
+      background: #132019;
+      color: #fff;
+      overflow: hidden;
+    }
+    .aside-top {
+      padding: 18px;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+    .aside-top span {
+      display: block;
+      margin-bottom: 6px;
+      color: #b9c8c0;
+      font-size: 12px;
+      font-weight: 760;
+    }
+    .aside-top h3 {
+      margin: 0;
+      font-size: 25px;
+      line-height: 1.16;
+    }
+    .aside-body {
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+    .aside-item {
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      padding: 14px;
+    }
+    .aside-item b {
+      display: block;
+      font-size: 14px;
+      line-height: 1.3;
+    }
+    .aside-item span {
+      display: block;
+      margin-top: 7px;
+      color: #c9d8d0;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .pricing {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+    .price-card {
+      padding: 22px;
+      position: relative;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+    }
+    .price-card.featured {
+      border-color: #8bc9ae;
+      box-shadow: 0 18px 42px rgba(23, 107, 77, .16);
+    }
+    .badge {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      min-height: 27px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      padding: 0 10px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .price {
+      margin-top: 18px;
+      font-size: 42px;
+      line-height: 1;
+      font-weight: 850;
+    }
+    .price small {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 22px;
+      display: grid;
+      gap: 11px;
+    }
+    .features li {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 8px;
+      color: #33423b;
+      font-size: 14px;
+      line-height: 1.42;
+    }
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .price-card .button {
+      margin-top: auto;
+      width: 100%;
+    }
+    .payment-note {
+      margin-top: 14px;
+      border: 1px solid #dce5e0;
+      border-radius: 8px;
+      background: #fff;
+      padding: 13px 15px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .pay-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(320px, 1.05fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+    .pay-panel {
+      padding: 22px;
+    }
+    .plan-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 18px 0;
+    }
+    .plan-tab {
+      min-height: 56px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      color: #34473e;
+    }
+    .plan-tab.active {
+      border-color: #8bc9ae;
+      background: var(--green-soft);
+      color: var(--green);
+      box-shadow: inset 0 0 0 1px rgba(23, 107, 77, .08);
+    }
+    .amount-box {
+      border: 1px solid #cbd8d1;
+      border-radius: 8px;
+      background: var(--soft);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .amount-box span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+    .amount-box strong {
+      font-size: 34px;
+      line-height: 1;
+    }
+    .qr-frame {
+      border: 1px solid #cbd8d1;
+      border-radius: 8px;
+      background: #fff;
+      padding: 14px;
+      display: grid;
+      place-items: center;
+      margin-top: 14px;
+    }
+    .qr-frame img {
+      width: min(100%, 280px);
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+    .steps {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 11px;
+    }
+    .steps li {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: #33423b;
+      line-height: 1.52;
+      font-size: 14px;
+    }
+    .form-callout {
+      margin-top: 16px;
+      border: 1px solid #cbd8d1;
+      border-radius: 8px;
+      background: #fff;
+      padding: 16px;
+    }
+    .form-callout strong {
+      display: block;
+      font-size: 16px;
+    }
+    .form-callout p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .pay-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .fit-list {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+    .fit-list li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 9px;
+      color: #33423b;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .footer-cta {
+      background: #132019;
+      color: #fff;
+      border-bottom: 0;
+    }
+    .cta-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .cta-box h2 {
+      margin: 0;
+      max-width: 720px;
+      font-size: 40px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    .cta-box p {
+      margin: 13px 0 0;
+      max-width: 720px;
+      color: #c9d8d0;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 0;
+      }
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+      }
+      .nav-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .hero-grid,
+      .sample-grid,
+      .pay-grid,
+      .fit-grid {
+        grid-template-columns: 1fr;
+      }
+      .proof-row,
+      .cards-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .cards-3,
+      .pricing,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .section-head {
+        display: block;
+      }
+      .section-head p {
+        margin-top: 12px;
+      }
+      .cta-box {
+        display: block;
+      }
+      .cta-box .button {
+        margin-top: 20px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 24px, 1160px); }
+      .hero { padding: 34px 0 26px; }
+      h1 { font-size: 39px; }
+      .lead { font-size: 16px; }
+      section { padding: 44px 0; }
+      .section-head h2,
+      .cta-box h2 { font-size: 30px; }
+      .proof-row,
+      .cards-4,
+      .metric-strip,
+      .plan-tabs {
+        grid-template-columns: 1fr;
+      }
+      .button,
+      .hero-actions .button,
+      .pay-actions .button {
+        width: 100%;
+      }
+      .brand span,
+      .trust-pill {
+        white-space: normal;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Opportunity Intel",
+      "description": "给中文独立开发者的海外社区产品机会情报订阅服务。",
+      "areaServed": "CN",
+      "offers": [
+        {"@type": "Offer", "name": "Weekly", "price": "99", "priceCurrency": "CNY"},
+        {"@type": "Offer", "name": "Pro", "price": "199", "priceCurrency": "CNY"},
+        {"@type": "Offer", "name": "Studio", "price": "999", "priceCurrency": "CNY"}
+      ]
+    }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Opportunity Intel">
+        <div class="mark">OI</div>
+        <div>
+          <strong>Opportunity Intel</strong>
+          <span>海外社区需求雷达</span>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="页面导航">
+        <a href="#sample">样例</a>
+        <a href="#deliverables">交付</a>
+        <a href="#pricing">价格</a>
+        <a href="#payment">付款</a>
+        <a href="../">English</a>
+      </nav>
+      <div class="nav-actions">
+        <span class="trust-pill">支付宝付款，24 小时内开通</span>
+        <a class="button" href="#payment">立即订阅</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">给中文独立开发者的海外需求情报</div>
+          <h1>少刷 Reddit，多看可付费的产品机会。</h1>
+          <p class="lead">Opportunity Intel 会持续扫描海外社区里的真实抱怨、替代方案、预算线索和冷启动语境，把它们整理成你能直接评估的产品机会：痛点证据、MVP 范围、定价建议、上线话术和风险提醒。</p>
+          <div class="hero-actions">
+            <a class="button green" href="#payment">用支付宝订阅</a>
+            <a class="button secondary" href="#sample">先看样例机会</a>
+          </div>
+          <div class="proof-row" aria-label="服务关键信息">
+            <div class="proof"><b>¥99 起</b><span>月付预付费，无自动续费</span></div>
+            <div class="proof"><b>10 个/周</b><span>每周整理一批机会</span></div>
+            <div class="proof"><b>24 小时</b><span>付款填表后人工开通</span></div>
+            <div class="proof"><b>支付宝</b><span>更适合中文用户付款</span></div>
+          </div>
+        </div>
+
+        <article class="report-card" aria-label="报告样例预览">
+          <div class="report-top">
+            <div>
+              <strong>样例机会：自由职业者报价后范围膨胀</strong>
+              <span>Reddit / Indie Hackers / 创作者社区信号</span>
+            </div>
+            <div class="score-badge">8.7</div>
+          </div>
+          <div class="report-body">
+            <div class="tag-row">
+              <span class="tag green">付费意愿明显</span>
+              <span class="tag blue">小工具可验证</span>
+              <span class="tag coral">竞争低门槛</span>
+              <span class="tag gold">适合冷启动</span>
+            </div>
+            <p class="quote">反复出现的痛点：客户确认报价后继续追加需求，自由职业者不好意思加价，也缺少一套自然的变更流程。</p>
+            <div class="mini-plan">
+              <div><span class="num">1</span><span>产品角度：scope guard + change request kit，把邮件线程转成变更单、加价模板和交付边界。</span></div>
+              <div><span class="num">2</span><span>MVP：上传项目范围，自动生成变更说明、加价脚本、客户确认页。</span></div>
+              <div><span class="num">3</span><span>冷启动：去自由职业者社区用“如何礼貌拒绝免费追加需求”切入。</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>你缺的不是更多 idea，而是判断要不要做的证据。</h2>
+          <p>很多中文开发者想做海外产品，但时间花在刷帖子、收藏链接、猜需求上。我们把散落的社区信号压缩成一份可以比较、筛选、行动的机会清单。</p>
+        </div>
+        <div class="cards-4" id="deliverables">
+          <article class="card">
+            <div class="tag green">Daily</div>
+            <h3>每日信号邮件</h3>
+            <p>Pro 计划每天推送新的痛点、受众、可能产品形态和冷启动角度，让你持续看到真实需求。</p>
+            <strong>适合需要持续找题的人</strong>
+          </article>
+          <article class="card">
+            <div class="tag blue">Weekly</div>
+            <h3>每周 PDF 深度报告</h3>
+            <p>每期包含 10 个机会，附痛点证据、MVP 范围、定价区间、竞争风险和优先级评分。</p>
+            <strong>适合周末集中做选题评审</strong>
+          </article>
+          <article class="card">
+            <div class="tag coral">Launch</div>
+            <h3>冷启动话术</h3>
+            <p>每个机会都会给出发帖 hook、目标人群、回复角度和落地页承诺，减少从研究到验证的断层。</p>
+            <strong>适合想快速验证的人</strong>
+          </article>
+          <article class="card">
+            <div class="tag gold">Score</div>
+            <h3>机会评分表</h3>
+            <p>按痛点强度、买家清晰度、预算线索、紧急度、竞争程度评分，避免被“看起来很酷”的想法骗走时间。</p>
+            <strong>适合独立开发者和小团队</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sample" id="sample">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>推广前先让用户看到“值钱的样例”。</h2>
+          <p>下面这些就是订阅报告的表达方式：不是随机灵感，而是围绕真实痛点组织成能验证的产品方向。</p>
+        </div>
+        <div class="sample-grid">
+          <div class="sample-list">
+            <article class="signal">
+              <div class="tag-row">
+                <span class="tag green">Freelancers</span>
+                <span class="tag blue">B2B micro-SaaS</span>
+                <span class="tag coral">评分 8.7</span>
+              </div>
+              <h3>报价后范围膨胀，客户追加需求却不愿重新确认预算。</h3>
+              <p>可能产品：变更请求生成器 + 客户确认页 + 礼貌加价脚本。先做模板和轻量表单，不急着做完整项目管理工具。</p>
+              <div class="metric-strip">
+                <div class="metric"><b>强</b><span>痛点强度</span></div>
+                <div class="metric"><b>清晰</b><span>买家画像</span></div>
+                <div class="metric"><b>¥</b><span>预算线索</span></div>
+                <div class="metric"><b>快</b><span>MVP 速度</span></div>
+              </div>
+            </article>
+            <article class="signal">
+              <div class="tag-row">
+                <span class="tag green">App Founders</span>
+                <span class="tag blue">AI 工具</span>
+                <span class="tag coral">评分 8.1</span>
+              </div>
+              <h3>用户评论太乱，创始人很难把 App Store 评论变成路线图。</h3>
+              <p>可能产品：评论挖掘助手，把差评按 bug、上手障碍、价格阻力、功能请求分组，并生成下个版本建议。</p>
+            </article>
+            <article class="signal">
+              <div class="tag-row">
+                <span class="tag green">Creators</span>
+                <span class="tag blue">Productivity</span>
+                <span class="tag coral">评分 7.8</span>
+              </div>
+              <h3>催收尾款很尴尬，创作者不知道怎么写既不冒犯又有效的提醒。</h3>
+              <p>可能产品：付款提醒脚本包 + 自动跟进日历 + 发票状态页。先卖模板包验证，再做自动化。</p>
+            </article>
+          </div>
+
+          <aside class="sample-aside">
+            <div class="aside-top">
+              <span>每份报告都会回答</span>
+              <h3>这个机会为什么现在值得测试？</h3>
+            </div>
+            <div class="aside-body">
+              <div class="aside-item"><b>痛点是否真实</b><span>来自近期帖子、评论、替代方案和反复出现的抱怨。</span></div>
+              <div class="aside-item"><b>谁可能付钱</b><span>明确目标用户、预算线索、购买触发点和使用场景。</span></div>
+              <div class="aside-item"><b>先做多小</b><span>给出 1-2 周内能验证的 MVP 范围，而不是完整平台幻想。</span></div>
+              <div class="aside-item"><b>怎么冷启动</b><span>配套 Reddit、X、社区回复和落地页 hook，直接进入验证。</span></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>先从月付开始，确认有帮助再续。</h2>
+          <p>目前只接入支付宝。所有计划都是预付费月度访问，不自动续费；付款后提交邮箱和截图，24 小时内开通。</p>
+        </div>
+        <div class="pricing">
+          <article class="price-card">
+            <h3>Weekly</h3>
+            <div class="price">¥99 <small>/ 月</small></div>
+            <p>适合只想每周集中看一次机会清单的独立开发者。</p>
+            <ul class="features">
+              <li><span class="check">✓</span><span>每周 1 份 PDF 报告</span></li>
+              <li><span class="check">✓</span><span>每期 10 个产品机会</span></li>
+              <li><span class="check">✓</span><span>痛点证据、MVP、定价建议</span></li>
+            </ul>
+            <a class="button secondary select-plan" href="#payment" data-plan="weekly">选择 Weekly</a>
+          </article>
+
+          <article class="price-card featured">
+            <div class="badge">推荐</div>
+            <h3>Pro</h3>
+            <div class="price">¥199 <small>/ 月</small></div>
+            <p>适合正在持续找海外产品选题、想每天保持需求输入的人。</p>
+            <ul class="features">
+              <li><span class="check">✓</span><span>每日信号邮件</span></li>
+              <li><span class="check">✓</span><span>每周 PDF 深度报告</span></li>
+              <li><span class="check">✓</span><span>可选择关注品类</span></li>
+              <li><span class="check">✓</span><span>冷启动话术和落地页角度</span></li>
+            </ul>
+            <a class="button green select-plan" href="#payment" data-plan="pro">选择 Pro</a>
+          </article>
+
+          <article class="price-card">
+            <h3>Studio</h3>
+            <div class="price">¥999 <small>/ 月</small></div>
+            <p>适合已经有方向，想每月拿一个定制机会拆解的小团队。</p>
+            <ul class="features">
+              <li><span class="check">✓</span><span>包含 Pro 全部内容</span></li>
+              <li><span class="check">✓</span><span>每月 1 个定制机会拆解</span></li>
+              <li><span class="check">✓</span><span>落地页定位建议</span></li>
+              <li><span class="check">✓</span><span>冷启动回复脚本</span></li>
+            </ul>
+            <a class="button secondary select-plan" href="#payment" data-plan="studio">选择 Studio</a>
+          </article>
+        </div>
+        <div class="payment-note">付款说明：支付宝扫码后请输入对应金额。付款后请务必提交激活表单，包含邮箱、购买计划、关注品类、付款人姓名和截图，方便人工核对开通。</div>
+      </div>
+    </section>
+
+    <section id="payment">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>支付宝付款后，填表开通账号。</h2>
+          <p>这是当前最重要的转化路径：用户不用注册复杂账号，付款后提交邮箱，我们按邮箱发送每日信号和每周报告。</p>
+        </div>
+        <div class="pay-grid">
+          <article class="pay-panel">
+            <h3>1. 选择你要付款的计划</h3>
+            <p>点击计划后，下面会显示对应金额。支付宝扫码时请手动输入相同金额。</p>
+            <div class="plan-tabs" role="group" aria-label="选择订阅计划">
+              <button class="plan-tab" type="button" data-plan="weekly">Weekly<br>¥99</button>
+              <button class="plan-tab active" type="button" data-plan="pro">Pro<br>¥199</button>
+              <button class="plan-tab" type="button" data-plan="studio">Studio<br>¥999</button>
+            </div>
+            <div class="amount-box">
+              <span>当前应付金额</span>
+              <strong id="amountDue">¥199</strong>
+            </div>
+            <ul class="steps">
+              <li><span class="num">1</span><span>打开支付宝，扫描右侧二维码，输入对应金额并完成付款。</span></li>
+              <li><span class="num">2</span><span>付款成功后截图，点击“提交激活表单”。</span></li>
+              <li><span class="num">3</span><span>填写收报告的邮箱、购买计划、关注品类、付款人姓名和截图。</span></li>
+              <li><span class="num">4</span><span>我们在 24 小时内核对并开通，之后按计划发送邮件和 PDF。</span></li>
+            </ul>
+          </article>
+
+          <article class="pay-panel">
+            <h3>2. 扫码支付并提交激活表单</h3>
+            <p>当前计划：<strong id="selectedPlanName">Pro</strong>。如果金额填错，请邮件联系 support，并附上付款截图。</p>
+            <div class="qr-frame">
+              <img src="../assets/alipay-qr-crop.jpg" alt="Opportunity Intel 支付宝收款二维码">
+            </div>
+            <div class="form-callout">
+              <strong>激活表单需要填写什么？</strong>
+              <p>邮箱、购买计划、希望接收的频率、关注品类、支付宝付款人姓名、付款截图。没有选择品类时默认发送全品类。</p>
+            </div>
+            <div class="pay-actions">
+              <a class="button green" href="https://tally.so/r/kdx0G6" target="_blank" rel="noopener">提交激活表单</a>
+              <a class="button secondary" href="mailto:lee271420@gmail.com?subject=Opportunity%20Intel%20activation%20support">邮件咨询</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>适合谁，不适合谁。</h2>
+          <p>这样写能减少无效订阅，也能让真正的目标用户更快判断“这是给我的”。</p>
+        </div>
+        <div class="fit-grid">
+          <article class="card">
+            <div class="tag green">适合</div>
+            <ul class="fit-list">
+              <li><span class="check">✓</span><span>想做英文/海外产品，但不知道从哪里找需求的中文独立开发者。</span></li>
+              <li><span class="check">✓</span><span>已经会开发，希望用社区信号筛掉伪需求的人。</span></li>
+              <li><span class="check">✓</span><span>做 AI 工具、DevTools、效率工具、B2B SaaS、小众工具的人。</span></li>
+              <li><span class="check">✓</span><span>需要持续输入产品选题、冷启动角度和落地页话术的人。</span></li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="tag coral">不适合</div>
+            <ul class="fit-list">
+              <li><span class="num">!</span><span>想要“保证赚钱项目”的人。我们提供证据和判断，不承诺收益。</span></li>
+              <li><span class="num">!</span><span>不愿验证需求、只想直接抄完整产品的人。</span></li>
+              <li><span class="num">!</span><span>只做国内本地业务、完全不关心海外社区的人。</span></li>
+              <li><span class="num">!</span><span>希望系统自动续费或即时自动开通的人。目前是人工核对开通。</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>订阅前常见问题。</h2>
+          <p>付款链路越清楚，推广流量越不容易在最后一步流失。</p>
+        </div>
+        <div class="faq-grid">
+          <article class="card">
+            <h3>这只是 idea 列表吗？</h3>
+            <p>不是。每个机会会包含痛点证据、用户画像、当前替代方案、MVP 范围、价格建议、冷启动话术和风险提醒。</p>
+          </article>
+          <article class="card">
+            <h3>能只看 AI 或 DevTools 吗？</h3>
+            <p>可以。付款后在激活表单里选择关注品类；不选择时默认发送全品类。</p>
+          </article>
+          <article class="card">
+            <h3>多久能收到报告？</h3>
+            <p>付款并提交激活表单后，24 小时内开通。Weekly 每周收 PDF；Pro 收每日信号邮件和每周 PDF。</p>
+          </article>
+          <article class="card">
+            <h3>会自动续费吗？</h3>
+            <p>不会。当前是预付费月度访问，到期前你可以手动续费。没有自动扣款。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-cta">
+      <div class="wrap cta-box">
+        <div>
+          <h2>把“刷社区找灵感”变成每周可评审的机会清单。</h2>
+          <p>如果你正在做海外工具、AI 产品、DevTools 或 micro-SaaS，先用一个月看看这些信号是否能帮你少走弯路。</p>
+        </div>
+        <a class="button" href="#payment">支付宝订阅</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const plans = {
+      weekly: { name: 'Weekly', amount: '¥99' },
+      pro: { name: 'Pro', amount: '¥199' },
+      studio: { name: 'Studio', amount: '¥999' }
+    };
+    const amountDue = document.getElementById('amountDue');
+    const selectedPlanName = document.getElementById('selectedPlanName');
+    const planTabs = document.querySelectorAll('.plan-tab');
+    const selectPlanLinks = document.querySelectorAll('.select-plan');
+
+    function setPlan(planKey) {
+      const plan = plans[planKey] || plans.pro;
+      amountDue.textContent = plan.amount;
+      selectedPlanName.textContent = plan.name;
+      planTabs.forEach((tab) => tab.classList.toggle('active', tab.dataset.plan === planKey));
+    }
+
+    planTabs.forEach((tab) => {
+      tab.addEventListener('click', () => setPlan(tab.dataset.plan));
+    });
+    selectPlanLinks.forEach((link) => {
+      link.addEventListener('click', () => setPlan(link.dataset.plan));
+    });
+  </script>
+</body>
+</html>
