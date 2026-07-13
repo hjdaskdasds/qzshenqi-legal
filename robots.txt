@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /user_agreement.html
+Disallow: /auto_renewal.html
+Disallow: /legal.html
+Disallow: /opportunity-intel/cn/
+
+Sitemap: https://opportunityintel.top/sitemap.xml
