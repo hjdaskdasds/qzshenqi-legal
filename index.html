@@ -22,6 +22,7 @@
   <meta name="twitter:image" content="https://opportunityintel.top/assets/opportunity-intel-social.png">
   <meta name="twitter:image:alt" content="Opportunity Intel evidence-backed micro-SaaS research brief">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="/assets/hero-report-workspace.png" fetchpriority="high">
   <link rel="canonical" href="https://opportunityintel.top/">
   <title>Validated Micro-SaaS Ideas from Reddit &amp; App Reviews</title>
   <script type="application/ld+json">
@@ -2050,6 +2051,204 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(7px); }
     }
+
+    /* Visual-first homepage */
+    .hero {
+      height: calc(100svh - 104px);
+      min-height: 650px;
+      max-height: 780px;
+      padding: 0;
+      position: relative;
+      border-bottom: 0;
+      background-color: #102c23;
+      background-image: url('/assets/hero-report-workspace.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .hero .wrap,
+    .hero-grid { height: 100%; }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-copy {
+      width: min(690px, 48%);
+      padding: 34px 0 40px;
+    }
+
+    .hero .eyebrow {
+      min-height: 0;
+      margin: 0 0 20px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: #9fd3ba;
+      font-size: 13px;
+      font-weight: 820;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: none;
+      color: #fff;
+      font-size: 82px;
+      line-height: .94;
+    }
+
+    .hero-promise {
+      max-width: 650px;
+      margin: 22px 0 0;
+      color: #fff;
+      font-size: 34px;
+      font-weight: 760;
+      line-height: 1.08;
+    }
+
+    .hero .lead {
+      max-width: 640px;
+      margin-top: 18px;
+      color: #c7d8d0;
+      font-size: 17px;
+      line-height: 1.56;
+    }
+
+    .hero .hero-actions { margin-top: 26px; }
+
+    .hero .button {
+      border-color: #fff;
+      background: #fff;
+      color: #102c23;
+    }
+
+    .hero .button.secondary {
+      border-color: rgba(255,255,255,.52);
+      background: rgba(16,44,35,.36);
+      color: #fff;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero .proof-row {
+      max-width: 650px;
+      gap: 0;
+      margin-top: 30px;
+    }
+
+    .hero .proof {
+      min-height: 66px;
+      border: 0;
+      border-left: 1px solid rgba(255,255,255,.27);
+      border-radius: 0;
+      background: transparent;
+      padding: 2px 20px;
+    }
+
+    .hero .proof:first-child { padding-left: 0; border-left: 0; }
+    .hero .proof:hover { border-color: rgba(255,255,255,.27); box-shadow: none; transform: none; }
+    .hero .proof strong { color: #fff; font-size: 23px; }
+    .hero .proof span { color: #aec4ba; font-size: 12px; }
+
+    .hero .assurance-strip {
+      max-width: 650px;
+      gap: 7px;
+      margin-top: 18px;
+    }
+
+    .hero .assurance-item {
+      border-color: rgba(255,255,255,.17);
+      background: rgba(8,30,22,.48);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero .assurance-item b { color: #fff; }
+    .hero .assurance-item span { color: #abc0b6; }
+    .report-stack { display: none; }
+
+    .sample-visual,
+    .method-visual {
+      margin: 0;
+      border: 1px solid #cad5cf;
+      border-radius: 8px;
+      background: #e9eeeb;
+      overflow: hidden;
+      box-shadow: 0 18px 42px rgba(23,42,34,.12);
+    }
+
+    .sample-visual img,
+    .method-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .sample-visual figcaption,
+    .method-visual figcaption {
+      padding: 14px 16px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .decision-grid {
+      grid-template-columns: minmax(0, 1.55fr) minmax(300px, .65fr);
+      gap: 18px;
+    }
+
+    .method-visual {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .method-visual img {
+      flex: 1 1 auto;
+      height: 100%;
+      min-height: 440px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        height: calc(100svh - 96px);
+        min-height: 620px;
+        background-position: 32% center;
+      }
+      .hero-copy { width: min(650px, 72%); }
+      .hero h1 { font-size: 64px; }
+      .hero-promise { font-size: 31px; }
+      .decision-grid { grid-template-columns: 1fr; }
+      .method-visual img { min-height: 0; height: auto; }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        height: calc(100svh - 128px);
+        min-height: 560px;
+        max-height: 650px;
+        background-position: 30% center;
+      }
+      .hero-copy { width: 100%; padding: 28px 0 32px; }
+      .hero .eyebrow { margin-bottom: 14px; font-size: 11px; }
+      .hero h1 { font-size: 47px; line-height: .96; }
+      .hero-promise { margin-top: 16px; font-size: 26px; line-height: 1.08; }
+      .hero .lead { margin-top: 14px; font-size: 15px; line-height: 1.47; }
+      .hero .hero-actions { margin-top: 20px; gap: 8px; }
+      .hero .button { min-height: 38px; padding: 0 12px; font-size: 13px; }
+      .hero .proof-row { margin-top: 24px; }
+      .hero .proof { min-height: 56px; padding: 0 9px; }
+      .hero .proof strong { font-size: 20px; }
+      .hero .proof span { margin-top: 5px; font-size: 10px; }
+      .hero .assurance-strip { display: none; }
+      .sample-visual { order: -1; }
+      .sample-visual figcaption,
+      .method-visual figcaption { font-size: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -2079,14 +2278,16 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" role="img" aria-label="Opportunity Intel research briefs arranged on a premium editorial workspace">
       <div class="wrap hero-grid">
-        <div>
+        <div class="hero-copy">
           <div class="eyebrow">
-            <span>Daily and weekly opportunity intelligence</span>
+            <span>Evidence-backed product research</span>
 
           </div>
-          <h1>Find validated micro-SaaS opportunities before everyone else.</h1>
+          <h1>Opportunity Intel</h1>
+
+          <p class="hero-promise">Find validated micro-SaaS opportunities before everyone else.</p>
 
           <p class="lead">We scan online communities for real complaints, unmet needs, buying signals, and clumsy workarounds, then turn them into concise product briefs for indie builders.</p>
 
@@ -2134,69 +2335,6 @@
           </div>
         </div>
 
-        <div class="report-stack" aria-label="Report mockup">
-          <div class="report-sheet">
-            <div class="report-top">
-              <div class="report-title">
-                <span>Weekly Opportunity Brief</span>
-
-              </div>
-              <div class="report-date">Issue 01</div>
-            </div>
-            <div class="report-body">
-              <div class="score-row">
-                <div class="score"><b>8.7</b><span>Pain</span></div>
-                <div class="score"><b>7.9</b><span>Pay intent</span></div>
-                <div class="score"><b>4.1</b><span>Crowding</span></div>
-              </div>
-              <div class="opportunity">
-                <div class="tag-row">
-                  <span class="tag green">B2B SaaS</span>
-                  <span class="tag blue">Reddit Signal</span>
-                  <span class="tag coral">Scope Creep</span>
-                </div>
-                <h3 style="margin-top:14px;">Client Scope Guard for Freelancers</h3>
-
-                <p class="quote">A public r/webdev discussion describes scope creep and the pressure to balance client expectations with realistic delivery timelines.</p>
-
-                <div class="action-plan">
-                  <div class="plan-item"><span class="num">1</span><span>MVP: quote generator + change-request scripts</span></div>
-                  <div class="plan-item"><span class="num">2</span><span>Pricing: $9 one-time pack or $7/mo assistant</span></div>
-                  <div class="plan-item"><span class="num">3</span><span>Launch angle: stop doing unpaid client work</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="email-card">
-            <div class="email-head">
-              <b>Today’s Signals</b>
-
-              <span>3 opportunities in 4 minutes</span>
-
-            </div>
-            <div class="email-body">
-              <div class="mini-signal">
-                <b>AI meeting notes for non-tech founders</b>
-
-                <span>Users complain current tools are too enterprise-heavy.</span>
-
-              </div>
-              <div class="mini-signal">
-                <b>App Store review reply assistant</b>
-
-                <span>Indie app makers ask for faster review triage.</span>
-
-              </div>
-              <div class="mini-signal">
-                <b>Creator invoice reminder kit</b>
-
-                <span>Pain signal: awkward follow-ups after late payments.</span>
-
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -2312,43 +2450,10 @@
             </div>
           </div>
 
-          <div class="panel pdf-preview">
-            <div class="panel-header">
-              <strong>Weekly PDF Preview</strong>
-
-              <span>12-page deep report</span>
-            </div>
-            <div class="pdf-page">
-              <div>
-                <div class="tag-row">
-                  <span class="tag green">Issue 01</span>
-                  <span class="tag blue">Productivity</span>
-                </div>
-                <h3 style="margin-top:16px;">10 micro-SaaS opportunities from real user complaints</h3>
-
-                <div class="pdf-lines">
-                  <div class="line w90"></div>
-                  <div class="line w78"></div>
-                  <div class="line w60"></div>
-                  <div class="line w44"></div>
-                </div>
-              </div>
-              <div class="table-preview">
-                <div class="table-row head">
-                  <div>Opportunity</div><div>Score</div><div>Launch Angle</div>
-                </div>
-                <div class="table-row">
-                  <div>Invoice follow-up</div><div>8.9</div><div>Freelancers</div>
-                </div>
-                <div class="table-row">
-                  <div>Calendar sync audit</div><div>8.8</div><div>Consultants</div>
-                </div>
-                <div class="table-row">
-                  <div>Scope guard</div><div>8.6</div><div>Solo service pros</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <figure class="sample-visual">
+            <img src="/assets/report-spread.png" width="1600" height="1000" loading="lazy" alt="Actual Opportunity Intel report pages showing source evidence, scores, MVP hypotheses, and risk notes">
+            <figcaption>Actual pages from the free English sample, not a placeholder mockup.</figcaption>
+          </figure>
         </div>
         <div class="sample-actions">
           <p>Read the public sample in English, inspect every source link, and see how evidence becomes an MVP, pricing angle, validation test, and risk assessment.</p>
@@ -2367,70 +2472,10 @@
         </div>
 
         <div class="decision-grid">
-          <article class="workflow-panel">
-            <div class="tag-row">
-              <span class="tag green">Evidence first</span>
-              <span class="tag blue">Founder-ready</span>
-              <span class="tag coral">Launch angle included</span>
-            </div>
-            <div class="workflow-steps">
-              <div class="workflow-step">
-                <b>01</b>
-                <strong>Find fresh pain</strong>
-
-                <span>Recent posts, active comments, repeated complaints, and visible workarounds.</span>
-
-              </div>
-              <div class="workflow-step">
-                <b>02</b>
-                <strong>Score demand</strong>
-
-                <span>Pain intensity, buyer clarity, budget clues, urgency, and competition level.</span>
-
-              </div>
-              <div class="workflow-step">
-                <b>03</b>
-                <strong>Shape the MVP</strong>
-
-                <span>Small product scope, core promise, pricing range, and fastest test path.</span>
-
-              </div>
-              <div class="workflow-step">
-                <b>04</b>
-                <strong>Prepare launch copy</strong>
-
-                <span>Hook, target user, reply angle, landing-page promise, and risk notes.</span>
-
-              </div>
-            </div>
-
-            <div class="evidence-table" aria-label="Example evidence table">
-              <div class="evidence-row head">
-                <div><span>Signal</span></div>
-                <div><span>Pain quote</span></div>
-                <div><span>Likely product</span></div>
-                <div><span>Score</span></div>
-              </div>
-              <div class="evidence-row">
-                <div><span>Freelancers</span></div>
-                <div><span>Scope keeps expanding after the quote is approved.</span></div>
-                <div><span>Scope guard + change request kit</span></div>
-                <div><span class="score-pill">8.7</span></div>
-              </div>
-              <div class="evidence-row">
-                <div><span>App founders</span></div>
-                <div><span>Reviews are too messy to turn into a roadmap.</span></div>
-                <div><span>Review mining report assistant</span></div>
-                <div><span class="score-pill">8.1</span></div>
-              </div>
-              <div class="evidence-row">
-                <div><span>Creators</span></div>
-                <div><span>Following up on unpaid invoices feels awkward.</span></div>
-                <div><span>Payment reminder script pack</span></div>
-                <div><span class="score-pill">7.8</span></div>
-              </div>
-            </div>
-          </article>
+          <figure class="method-visual">
+            <img src="/assets/research-workflow.png" width="1600" height="920" loading="lazy" alt="Opportunity Intel workflow from public pain signals through scoring to a decision-ready product brief">
+            <figcaption>Public evidence stays separate from our product interpretation, scoring, and recommended validation path.</figcaption>
+          </figure>
 
           <aside class="roi-panel">
             <div>
