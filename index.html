@@ -3,15 +3,115 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Opportunity Intel delivers evidence-backed micro-SaaS opportunity briefs for indie builders, with daily signals, weekly PDF reports, scoring, pricing angles, and launch copy.">
+  <meta name="description" content="Discover evidence-backed micro-SaaS ideas from Reddit and App Store complaints, with buyer signals, MVP scope, pricing angles, and weekly reports.">
   <meta name="robots" content="index,follow">
+  <meta name="author" content="Opportunity Intel">
+  <meta name="theme-color" content="#173c2d">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Opportunity Intel | Evidence-Backed Micro-SaaS Opportunity Briefs">
-  <meta property="og:description" content="Get evidence-backed micro-SaaS opportunity briefs from Reddit, App Store reviews, and real community pain signals.">
+  <meta property="og:site_name" content="Opportunity Intel">
+  <meta property="og:title" content="Validated Micro-SaaS Ideas from Reddit &amp; App Reviews">
+  <meta property="og:description" content="Source-backed product opportunities with buyer signals, MVP scope, pricing angles, and practical validation paths.">
   <meta property="og:url" content="https://opportunityintel.top/">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://opportunityintel.top/assets/opportunity-intel-social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Opportunity Intel evidence-backed micro-SaaS research brief">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Validated Micro-SaaS Ideas from Reddit &amp; App Reviews">
+  <meta name="twitter:description" content="Source-backed product opportunities with buyer signals, MVP scope, pricing angles, and practical validation paths.">
+  <meta name="twitter:image" content="https://opportunityintel.top/assets/opportunity-intel-social.png">
+  <meta name="twitter:image:alt" content="Opportunity Intel evidence-backed micro-SaaS research brief">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://opportunityintel.top/">
-  <title>Opportunity Intel | Evidence-Backed Micro-SaaS Opportunity Briefs</title>
+  <title>Validated Micro-SaaS Ideas from Reddit &amp; App Reviews</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://opportunityintel.top/#organization",
+        "name": "Opportunity Intel",
+        "url": "https://opportunityintel.top/",
+        "logo": "https://opportunityintel.top/assets/favicon.svg",
+        "email": "lee271420@gmail.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://opportunityintel.top/#website",
+        "url": "https://opportunityintel.top/",
+        "name": "Opportunity Intel",
+        "publisher": { "@id": "https://opportunityintel.top/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://opportunityintel.top/#service",
+        "name": "Opportunity Intel Research Subscription",
+        "serviceType": "Micro-SaaS opportunity research",
+        "provider": { "@id": "https://opportunityintel.top/#organization" },
+        "url": "https://opportunityintel.top/#pricing",
+        "description": "Evidence-backed micro-SaaS opportunity briefs sourced from public community discussions and app reviews.",
+        "areaServed": "Worldwide",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Weekly",
+            "price": "99",
+            "priceCurrency": "CNY",
+            "availability": "https://schema.org/InStock",
+            "url": "https://opportunityintel.top/#pricing"
+          },
+          {
+            "@type": "Offer",
+            "name": "Pro",
+            "price": "599",
+            "priceCurrency": "CNY",
+            "availability": "https://schema.org/InStock",
+            "url": "https://opportunityintel.top/#pricing"
+          },
+          {
+            "@type": "Offer",
+            "name": "Studio",
+            "price": "999",
+            "priceCurrency": "CNY",
+            "availability": "https://schema.org/InStock",
+            "url": "https://opportunityintel.top/#pricing"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is this just an idea list?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Every opportunity includes source evidence, pain analysis, current workaround, target user, MVP scope, pricing suggestion, and launch angle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When will I receive the reports?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Weekly subscribers receive one PDF report per week. Pro subscribers receive daily signal emails plus the weekly deep report. Studio subscribers also receive one custom opportunity breakdown per month."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is payment recurring?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Access is prepaid and does not renew automatically. Subscribers renew manually before the access period ends."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       color-scheme: light;
@@ -1399,6 +1499,76 @@
       border-color: #fff;
     }
 
+    .sample-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .sample-actions p {
+      max-width: 670px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .evidence-link {
+      display: inline-flex;
+      margin-top: 12px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 760;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: #f5f8f6;
+      padding: 30px 0 34px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .footer-copy {
+      max-width: 510px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .footer-copy strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px 18px;
+    }
+
+    .footer-links a {
+      color: #3d4b45;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { text-decoration: underline; }
+
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -1774,6 +1944,12 @@
       }
       .section-head h2 { font-size: 31px; }
       .footer-cta h2 { font-size: 34px; }
+      .sample-actions,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .footer-links { justify-content: flex-start; }
       .roi-panel h3 { font-size: 25px; }
       .payment-panel,
       .price-card,
@@ -1888,7 +2064,7 @@
       </div>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#deliverables">Deliverables</a>
-        <a href="#sample">Sample</a>
+        <a href="/reports/">Reports</a>
         <a href="#method">Method</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
@@ -1915,12 +2091,12 @@
           <p class="lead">We scan online communities for real complaints, unmet needs, buying signals, and clumsy workarounds, then turn them into concise product briefs for indie builders.</p>
 
           <div class="hero-actions">
-            <a class="button" href="#pricing">
-              <span>Get Reports</span>
+            <a class="button free-sample-link" href="/reports/weekly-brief-01/">
+              <span>Read a Free Sample</span>
 
             </a>
-            <a class="button secondary" href="#sample">
-              <span>Preview the Format</span>
+            <a class="button secondary" href="#pricing">
+              <span>View Plans</span>
 
             </a>
           </div>
@@ -1981,7 +2157,7 @@
                 </div>
                 <h3 style="margin-top:14px;">Client Scope Guard for Freelancers</h3>
 
-                <p class="quote">“I keep saying yes to one more small request, then realize the whole project is unpaid extra work.”</p>
+                <p class="quote">A public r/webdev discussion describes scope creep and the pressure to balance client expectations with realistic delivery timelines.</p>
 
                 <div class="action-plan">
                   <div class="plan-item"><span class="num">1</span><span>MVP: quote generator + change-request scripts</span></div>
@@ -2099,36 +2275,38 @@
             <div class="panel-header">
               <strong>Daily Signal Preview</strong>
 
-              <span>04 Jul 2026</span>
+              <span>13 Jul 2026</span>
             </div>
             <div class="panel-body signal-list">
               <article class="signal-card">
                 <div class="tag-row">
                   <span class="tag green">High pain</span>
-                  <span class="tag blue">AI Tools</span>
+                  <span class="tag blue">Freelancers</span>
                   <span class="tag gold">Solo-buildable</span>
                 </div>
-                <h3>“I need a lightweight CRM that starts from my inbox, not a sales pipeline.”</h3>
+                <h3>Client scope-change confirmation for freelancers</h3>
 
-                <p>Opportunity: a freelancer-friendly relationship tracker that turns email threads into follow-up tasks and lightweight deal notes.</p>
+                <p>Opportunity: turn added client requests into a clear change summary, revised fee, delivery impact, and approval record before extra work begins.</p>
 
                 <div class="metric-strip">
-                  <div class="metric"><b>8.4</b><span>Pain</span></div>
-                  <div class="metric"><b>7.1</b><span>Pay</span></div>
+                  <div class="metric"><b>8.6</b><span>Score</span></div>
+                  <div class="metric"><b>B2B</b><span>Buyer</span></div>
                   <div class="metric"><b>5.2</b><span>Build</span></div>
                   <div class="metric"><b>$9-19</b><span>Price</span></div>
                 </div>
+                <a class="evidence-link" href="https://www.reddit.com/r/webdev/comments/1klj2ak/how_do_you_balance_client_expectations_with/" target="_blank" rel="noopener noreferrer">View the Reddit source</a>
               </article>
 
               <article class="signal-card">
                 <div class="tag-row">
-                  <span class="tag coral">Retention pain</span>
-                  <span class="tag blue">App builders</span>
+                  <span class="tag coral">Cash-flow pain</span>
+                  <span class="tag blue">Freelancers</span>
                   <span class="tag green">Clear buyer</span>
                 </div>
-                <h3>App founders are manually reading reviews to find churn reasons.</h3>
+                <h3>Overdue invoice follow-up assistant</h3>
 
-                <p>Opportunity: a review-mining brief that groups complaints into bugs, onboarding gaps, pricing resistance, and feature requests.</p>
+                <p>Opportunity: generate staged reminder emails, timing guidance, and a follow-up calendar for small service businesses managing late payments.</p>
+                <a class="evidence-link" href="https://www.reddit.com/r/smallbusinessuk/comments/1knw2dp/statutory_late_payment_interest_advice_england/" target="_blank" rel="noopener noreferrer">View the Reddit source</a>
 
               </article>
             </div>
@@ -2160,17 +2338,21 @@
                   <div>Opportunity</div><div>Score</div><div>Launch Angle</div>
                 </div>
                 <div class="table-row">
-                  <div>Inbox-first CRM</div><div>8.4</div><div>Freelancers</div>
+                  <div>Invoice follow-up</div><div>8.9</div><div>Freelancers</div>
                 </div>
                 <div class="table-row">
-                  <div>Review miner</div><div>8.1</div><div>App founders</div>
+                  <div>Calendar sync audit</div><div>8.8</div><div>Consultants</div>
                 </div>
                 <div class="table-row">
-                  <div>Scope guard</div><div>7.9</div><div>Solo service pros</div>
+                  <div>Scope guard</div><div>8.6</div><div>Solo service pros</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="sample-actions">
+          <p>Read the public sample in English, inspect every source link, and see how evidence becomes an MVP, pricing angle, validation test, and risk assessment.</p>
+          <a class="button free-sample-link" href="/reports/weekly-brief-01/">Read Weekly Brief 01</a>
         </div>
       </div>
     </section>
@@ -2513,6 +2695,23 @@
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-copy">
+        <strong>Opportunity Intel</strong>
+        Evidence-backed micro-SaaS research for independent builders. Opportunity Intel is independent and is not affiliated with Reddit, Apple, or any products referenced in its research.
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/reports/">Reports</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/about/">About</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/refund-delivery/">Refund &amp; Delivery</a>
+      </nav>
+    </div>
+  </footer>
+
   <div class="modal-overlay" id="checkoutModal" hidden>
     <div class="modal-backdrop" data-close-modal></div>
     <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-describedby="checkoutDescription">
@@ -2582,6 +2781,13 @@
   </div>
 
   <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function trackEvent(eventName, parameters = {}) {
+      window.dataLayer.push({ event: eventName, ...parameters });
+      if (typeof window.gtag === 'function') window.gtag('event', eventName, parameters);
+    }
+
     const checkoutModal = document.getElementById('checkoutModal');
     const modalPlanName = document.getElementById('modalPlanName');
     const modalPlanSummary = document.getElementById('modalPlanSummary');
@@ -2651,7 +2857,22 @@
     }
 
     planButtons.forEach((button) => {
-      button.addEventListener('click', () => openCheckout(button.dataset.plan));
+      button.addEventListener('click', () => {
+        trackEvent('checkout_open', { plan: button.dataset.plan || selectedPlan });
+        openCheckout(button.dataset.plan);
+      });
+    });
+
+    document.querySelectorAll('.free-sample-link').forEach((link) => {
+      link.addEventListener('click', () => trackEvent('sample_report_open'));
+    });
+
+    document.querySelectorAll('a[href^="https://tally.so/"]').forEach((link) => {
+      link.addEventListener('click', () => trackEvent('activation_form_click', { plan: selectedPlan }));
+    });
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+      link.addEventListener('click', () => trackEvent('support_email_click'));
     });
 
     checkoutModal.addEventListener('click', (event) => {
