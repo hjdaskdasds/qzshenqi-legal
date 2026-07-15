@@ -1,5 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#173c2d"/>
-  <path d="M17 17h8v30h-8z" fill="#fff"/>
-  <path d="M31 17h16v7h-8v16h8v7H31z" fill="#9ce0c0"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Opportunity Intel mark">
+  <defs>
+    <linearGradient id="bg" x1="10" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b241b"/>
+      <stop offset="1" stop-color="#174232"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="19" y1="19" x2="47" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8fbf7"/>
+      <stop offset="1" stop-color="#9ed8bb"/>
+    </linearGradient>
+  </defs>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="14" fill="url(#bg)"/>
+  <rect x="3" y="3" width="58" height="58" rx="13.5" fill="none" stroke="#2f6a52" stroke-opacity=".56"/>
+  <circle cx="27" cy="30" r="11.5" fill="none" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M35.4 38.4 43 46" fill="none" stroke="#f8fbf7" stroke-width="5" stroke-linecap="round"/>
+  <path d="M45.5 18.5v27" fill="none" stroke="#9ed8bb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M45.5 22h5.5M45.5 32h5.5M45.5 42h5.5" fill="none" stroke="#e9c46a" stroke-width="3.2" stroke-linecap="round"/>
 </svg>

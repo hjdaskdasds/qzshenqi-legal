@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Discover evidence-backed micro-SaaS ideas from Reddit and App Store complaints, with buyer signals, MVP scope, pricing angles, and weekly reports.">
+  <meta name="description" content="Source-backed micro-SaaS opportunity briefs built from public Reddit discussions and App Store review pain signals, with buyer context, MVP scope, validation steps, and risk notes.">
   <meta name="robots" content="index,follow">
   <meta name="author" content="Opportunity Intel">
   <meta name="theme-color" content="#173c2d">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Opportunity Intel">
-  <meta property="og:title" content="Validated Micro-SaaS Ideas from Reddit &amp; App Reviews">
-  <meta property="og:description" content="Source-backed product opportunities with buyer signals, MVP scope, pricing angles, and practical validation paths.">
+  <meta property="og:title" content="Source-Backed Micro-SaaS Opportunities From Reddit &amp; App Reviews">
+  <meta property="og:description" content="Research briefs with source links, buyer context, MVP scope, validation paths, and risk notes.">
   <meta property="og:url" content="https://opportunityintel.top/">
   <meta property="og:image" content="https://opportunityintel.top/assets/opportunity-intel-social.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Opportunity Intel evidence-backed micro-SaaS research brief">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Validated Micro-SaaS Ideas from Reddit &amp; App Reviews">
-  <meta name="twitter:description" content="Source-backed product opportunities with buyer signals, MVP scope, pricing angles, and practical validation paths.">
+  <meta name="twitter:title" content="Source-Backed Micro-SaaS Opportunities From Reddit &amp; App Reviews">
+  <meta name="twitter:description" content="Research briefs with source links, buyer context, MVP scope, validation paths, and risk notes.">
   <meta name="twitter:image" content="https://opportunityintel.top/assets/opportunity-intel-social.png">
   <meta name="twitter:image:alt" content="Opportunity Intel evidence-backed micro-SaaS research brief">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="/assets/hero-report-workspace.png" fetchpriority="high">
   <link rel="canonical" href="https://opportunityintel.top/">
-  <title>Validated Micro-SaaS Ideas from Reddit &amp; App Reviews</title>
+  <title>Source-Backed Micro-SaaS Opportunities From Reddit &amp; App Reviews</title>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,7 +89,7 @@
             "name": "Is this just an idea list?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. Every opportunity includes source evidence, pain analysis, current workaround, target user, MVP scope, pricing suggestion, and launch angle."
+              "text": "No. Every opportunity includes source evidence, pain analysis, current workaround, target user, MVP scope, commercial hypothesis, validation path, and risk notes."
             }
           },
           {
@@ -176,6 +176,11 @@
       letter-spacing: 0;
     }
 
+    .brand:hover .mark {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(16, 44, 35, .20);
+    }
+
     .brand-text {
       display: grid;
       gap: 2px;
@@ -198,14 +203,28 @@
     .mark {
       width: 36px;
       height: 36px;
+      flex: 0 0 36px;
       display: grid;
       place-items: center;
-      border: 1px solid #173c2d;
-      background: #173c2d;
+      position: relative;
+      overflow: hidden;
+      border: 0;
+      background: url('/assets/favicon.svg') center / 100% 100% no-repeat;
       color: #fff;
       border-radius: 7px;
-      font-size: 15px;
+      font-size: 0;
       font-weight: 850;
+      box-shadow: 0 8px 18px rgba(16, 44, 35, .16);
+      transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+    }
+
+    .mark::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 6px;
+      pointer-events: none;
     }
 
     .nav-actions {
@@ -637,6 +656,10 @@
     section {
       padding: 62px 0;
       border-bottom: 1px solid var(--line);
+    }
+
+    section[id] {
+      scroll-margin-top: 92px;
     }
 
     .section-head {
@@ -1860,6 +1883,8 @@
       .workflow-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .checkout-grid { grid-template-columns: 1fr; }
       .category-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .desk-grid { grid-template-columns: 1fr; }
+      .desk-sidebar { border-right: 0; border-bottom: 1px solid var(--line); }
       .section-head { display: block; }
       .section-head p { margin-top: 12px; max-width: 680px; }
       h1 { font-size: 52px; }
@@ -1882,6 +1907,7 @@
       .mark {
         width: 30px;
         height: 30px;
+        flex-basis: 30px;
         font-size: 12px;
       }
       .nav-actions {
@@ -1923,7 +1949,26 @@
       .category-grid {
         grid-template-columns: 1fr;
       }
+      .research-desk-section { padding-top: 28px; }
+      .desk-topbar { align-items: flex-start; flex-direction: column; padding: 14px; }
+      .desk-sidebar,
+      .desk-main { padding: 14px; }
+      .desk-metrics,
+      .brief-grid {
+        grid-template-columns: 1fr;
+      }
+      .brief-cell,
+      .brief-cell:nth-child(2n) {
+        border-right: 0;
+      }
+      .brief-cell:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+      .record-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .record-head span { white-space: normal; }
       section { padding: 46px 0; }
+      section[id] { scroll-margin-top: 152px; }
       .report-stack { min-height: 840px; }
       .email-card { width: 100%; top: 600px; }
       .panel-header { align-items: flex-start; gap: 10px; }
@@ -2017,6 +2062,24 @@
     }
 
     @media (prefers-reduced-motion: no-preference) {
+      .hero .eyebrow,
+      .hero h1,
+      .hero-promise,
+      .hero .lead,
+      .hero-actions,
+      .proof-row,
+      .assurance-strip {
+        opacity: 0;
+        animation: heroRise .78s cubic-bezier(.2, .72, .22, 1) forwards;
+      }
+
+      .hero h1 { animation-delay: .08s; }
+      .hero-promise { animation-delay: .16s; }
+      .hero .lead { animation-delay: .24s; }
+      .hero-actions { animation-delay: .32s; }
+      .proof-row { animation-delay: .40s; }
+      .assurance-strip { animation-delay: .48s; }
+
       .report-sheet {
         animation: floatSheet 7s ease-in-out infinite;
       }
@@ -2025,9 +2088,35 @@
         animation: floatEmail 8s ease-in-out infinite;
       }
 
+      .desk-topbar::after {
+        animation: deskScan 5.8s cubic-bezier(.72, 0, .2, 1) infinite;
+      }
+
+      .scan-step b {
+        animation: pulseStep 5.8s ease-in-out infinite;
+      }
+
+      .scan-step:nth-child(2) b { animation-delay: .55s; }
+      .scan-step:nth-child(3) b { animation-delay: 1.1s; }
+      .scan-step:nth-child(4) b { animation-delay: 1.65s; }
+
       .workflow-step,
       .price-card {
         will-change: transform;
+      }
+
+      .motion-ready .motion-reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity .7s cubic-bezier(.2, .72, .22, 1),
+          transform .7s cubic-bezier(.2, .72, .22, 1);
+        transition-delay: calc(var(--reveal-index, 0) * 45ms);
+      }
+
+      .motion-ready .motion-reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
@@ -2052,6 +2141,27 @@
       50% { transform: translateY(7px); }
     }
 
+    @keyframes heroRise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes deskScan {
+      0%, 18% { transform: translateX(-115%); }
+      58%, 100% { transform: translateX(115%); }
+    }
+
+    @keyframes pulseStep {
+      0%, 68%, 100% { box-shadow: 0 0 0 4px #f7faf8; }
+      34% { box-shadow: 0 0 0 4px #f7faf8, 0 0 0 8px rgba(158, 216, 187, .28); }
+    }
+
     /* Visual-first homepage */
     .hero {
       height: calc(100svh - 104px);
@@ -2061,7 +2171,9 @@
       position: relative;
       border-bottom: 0;
       background-color: #102c23;
-      background-image: url('/assets/hero-report-workspace.png');
+      background-image:
+        linear-gradient(90deg, rgba(8, 27, 20, .92) 0%, rgba(8, 27, 20, .78) 42%, rgba(8, 27, 20, .18) 72%, rgba(8, 27, 20, .06) 100%),
+        url('/assets/hero-report-workspace.png');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
@@ -2077,7 +2189,7 @@
     }
 
     .hero-copy {
-      width: min(690px, 48%);
+      width: min(760px, 54%);
       padding: 34px 0 40px;
     }
 
@@ -2095,19 +2207,19 @@
     }
 
     .hero h1 {
-      max-width: none;
+      max-width: 760px;
       color: #fff;
-      font-size: 82px;
-      line-height: .94;
+      font-size: 72px;
+      line-height: .97;
     }
 
     .hero-promise {
-      max-width: 650px;
+      max-width: 690px;
       margin: 22px 0 0;
       color: #fff;
-      font-size: 34px;
+      font-size: 28px;
       font-weight: 760;
-      line-height: 1.08;
+      line-height: 1.14;
     }
 
     .hero .lead {
@@ -2168,6 +2280,277 @@
     .hero .assurance-item b { color: #fff; }
     .hero .assurance-item span { color: #abc0b6; }
     .report-stack { display: none; }
+
+    .research-desk-section {
+      background: #f4f7f5;
+      padding-top: 42px;
+    }
+
+    .research-desk {
+      position: relative;
+      isolation: isolate;
+      border: 1px solid #cbd8d1;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 22px 48px rgba(23, 42, 34, .10);
+      overflow: hidden;
+    }
+
+    .research-desk::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(120deg, rgba(158, 216, 187, .14), transparent 32%),
+        linear-gradient(0deg, rgba(16, 44, 35, .04) 1px, transparent 1px);
+      background-size: auto, 100% 44px;
+    }
+
+    .desk-topbar {
+      position: relative;
+      overflow: hidden;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 18px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfb;
+    }
+
+    .desk-topbar::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(23, 107, 77, .72), transparent);
+      transform: translateX(-115%);
+      opacity: .72;
+      pointer-events: none;
+    }
+
+    .desk-topbar strong {
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    .desk-topbar span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 720;
+    }
+
+    .desk-grid {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      min-height: 540px;
+    }
+
+    .desk-sidebar {
+      border-right: 1px solid var(--line);
+      background: #f7faf8;
+      padding: 18px;
+    }
+
+    .scan-step {
+      display: grid;
+      grid-template-columns: 26px minmax(0, 1fr);
+      gap: 10px;
+      position: relative;
+      padding: 14px 0;
+      border-bottom: 1px solid #dfe8e3;
+    }
+
+    .scan-step:last-child { border-bottom: 0; }
+
+    .scan-step::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 43px;
+      bottom: -14px;
+      width: 1px;
+      background: #cfddd6;
+    }
+
+    .scan-step:last-child::before { display: none; }
+
+    .scan-step b {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      z-index: 1;
+      border-radius: 7px;
+      background: #173c2d;
+      color: #fff;
+      font-size: 11px;
+      box-shadow: 0 0 0 4px #f7faf8;
+    }
+
+    .scan-step strong {
+      display: block;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    .scan-step span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .desk-main {
+      min-width: 0;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .desk-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .desk-metric {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfb;
+      padding: 13px;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .desk-metric::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(110deg, transparent 0 36%, rgba(255,255,255,.82) 48%, transparent 60%);
+      transform: translateX(-120%);
+      pointer-events: none;
+    }
+
+    .desk-metric:hover {
+      border-color: #adc9bb;
+      box-shadow: 0 12px 24px rgba(23, 42, 34, .08);
+      transform: translateY(-2px);
+    }
+
+    .desk-metric:hover::after {
+      transform: translateX(120%);
+      transition: transform .7s ease;
+    }
+
+    .desk-metric b {
+      display: block;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .desk-metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.25;
+    }
+
+    .source-record {
+      position: relative;
+      border: 1px solid #ccd9d3;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(23, 42, 34, .06);
+    }
+
+    .source-record::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #176b4d, #2457c5 58%, #a36a00);
+      z-index: 1;
+    }
+
+    .record-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      background: #f5f8f6;
+    }
+
+    .record-head strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.24;
+    }
+
+    .record-head span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 720;
+      white-space: nowrap;
+    }
+
+    .record-body { padding: 16px; }
+
+    .source-line {
+      margin: 0 0 14px;
+      border-left: 3px solid var(--green);
+      background: #f8faf9;
+      padding: 11px 13px;
+      color: #34453d;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .brief-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .brief-cell {
+      min-width: 0;
+      padding: 14px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brief-cell:nth-child(2n) { border-right: 0; }
+    .brief-cell:nth-last-child(-n + 2) { border-bottom: 0; }
+
+    .brief-cell b {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #41514a;
+    }
+
+    .brief-cell span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.48;
+      overflow-wrap: anywhere;
+    }
 
     .sample-visual,
     .method-visual {
@@ -2249,6 +2632,57 @@
       .sample-visual figcaption,
       .method-visual figcaption { font-size: 12px; }
     }
+
+    @media (max-width: 980px) {
+      .desk-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .desk-sidebar {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .research-desk-section {
+        padding-top: 28px;
+      }
+
+      .desk-topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px;
+      }
+
+      .desk-sidebar,
+      .desk-main {
+        padding: 14px;
+      }
+
+      .desk-metrics,
+      .brief-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brief-cell,
+      .brief-cell:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .brief-cell:nth-last-child(2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .record-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .record-head span {
+        white-space: normal;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2282,14 +2716,14 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">
-            <span>Evidence-backed product research</span>
+            <span>Reddit + App Store research briefs</span>
 
           </div>
-          <h1>Opportunity Intel</h1>
+          <h1>Micro-SaaS opportunities from real pain signals.</h1>
 
-          <p class="hero-promise">Find validated micro-SaaS opportunities before everyone else.</p>
+          <p class="hero-promise">A weekly research desk for builders who want source links, buyer context, MVP scope, validation paths, and risk notes.</p>
 
-          <p class="lead">We scan online communities for real complaints, unmet needs, buying signals, and clumsy workarounds, then turn them into concise product briefs for indie builders.</p>
+          <p class="lead">Opportunity Intel reviews public Reddit discussions and App Store complaints, then separates the evidence from the product interpretation so you can decide what is worth testing.</p>
 
           <div class="hero-actions">
             <a class="button free-sample-link" href="/reports/weekly-brief-01/">
@@ -2303,26 +2737,26 @@
           </div>
           <div class="proof-row">
             <div class="proof">
-              <strong>3-5</strong>
-              <span>daily signals filtered from noisy communities</span>
+              <strong>Sources</strong>
+              <span>direct Reddit and App Store links included</span>
             </div>
             <div class="proof">
-              <strong>10-15</strong>
-              <span>weekly deep opportunities with MVP angles</span>
+              <strong>MVP</strong>
+              <span>scope, buyer, and validation path together</span>
             </div>
             <div class="proof">
-              <strong>10h+</strong>
-              <span>research time saved per week</span>
+              <strong>Risk</strong>
+              <span>competition and evidence limits called out</span>
             </div>
           </div>
           <div class="assurance-strip" aria-label="Service assurances">
             <div class="assurance-item">
-              <b>Evidence-backed</b>
-              <span>Source notes and pain signals included</span>
+              <b>Public evidence</b>
+              <span>No invented testimonials</span>
             </div>
             <div class="assurance-item">
-              <b>24h activation</b>
-              <span>Delivery starts after payment confirmation</span>
+              <b>Human review</b>
+              <span>Editorial scoring, not raw scraping</span>
             </div>
             <div class="assurance-item">
               <b>No auto-renewal</b>
@@ -2338,12 +2772,71 @@
       </div>
     </section>
 
+    <section class="research-desk-section" aria-labelledby="researchDeskTitle">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="researchDeskTitle">A research desk, not a random idea generator.</h2>
+          <p>The homepage should show the product. This is the structure subscribers see: source signal first, then buyer, MVP, validation, and risk.</p>
+        </div>
+        <div class="research-desk" aria-label="Opportunity Intel research desk preview">
+          <div class="desk-topbar">
+            <strong>Opportunity Intel / Weekly Brief Review</strong>
+            <span>Public sources reviewed: Reddit + App Store</span>
+          </div>
+          <div class="desk-grid">
+            <aside class="desk-sidebar" aria-label="Research workflow">
+              <div class="scan-step">
+                <b>1</b>
+                <div><strong>Collect public pain signals</strong><span>Reddit posts, app reviews, workarounds, and repeated complaints.</span></div>
+              </div>
+              <div class="scan-step">
+                <b>2</b>
+                <div><strong>Separate evidence from analysis</strong><span>Source facts stay separate from our product hypothesis.</span></div>
+              </div>
+              <div class="scan-step">
+                <b>3</b>
+                <div><strong>Score the opportunity</strong><span>Pain clarity, buyer clarity, urgency, build scope, and distribution fit.</span></div>
+              </div>
+              <div class="scan-step">
+                <b>4</b>
+                <div><strong>Package the next test</strong><span>MVP scope, validation path, positioning, and risk notes.</span></div>
+              </div>
+            </aside>
+            <div class="desk-main">
+              <div class="desk-metrics" aria-label="Opportunity score summary">
+                <div class="desk-metric"><b>8.9</b><span>research score</span></div>
+                <div class="desk-metric"><b>B2B</b><span>small-service buyer</span></div>
+                <div class="desk-metric"><b>1 wk</b><span>manual pilot window</span></div>
+                <div class="desk-metric"><b>Risk</b><span>legal framing differs by region</span></div>
+              </div>
+              <article class="source-record">
+                <div class="record-head">
+                  <strong>Overdue invoice follow-up assistant</strong>
+                  <span>Primary source: Reddit r/smallbusinessuk</span>
+                </div>
+                <div class="record-body">
+                  <p class="source-line">A freelance web designer asked how to handle a substantially overdue invoice and late-payment interest. The source makes the buyer, cash-flow pressure, and uncertainty visible.</p>
+                  <div class="brief-grid">
+                    <div class="brief-cell"><b>Buyer</b><span>Freelancers and small service firms with overdue invoices.</span></div>
+                    <div class="brief-cell"><b>MVP</b><span>Guided form that outputs staged reminder drafts and a follow-up calendar.</span></div>
+                    <div class="brief-cell"><b>Validation</b><span>Offer a manual recovery pack to ten freelancers before building integrations.</span></div>
+                    <div class="brief-cell"><b>Risk</b><span>Position as workflow support, not universal legal advice.</span></div>
+                  </div>
+                  <a class="evidence-link" href="/reports/overdue-invoice-follow-up-assistant/">Open the full source-backed brief</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="deliverables">
       <div class="wrap">
         <div class="section-head">
-          <h2>What you receive after subscribing.</h2>
+          <h2>What a subscriber receives.</h2>
 
-          <p>A recurring research system: fast daily signals, deeper weekly PDFs, opportunity scorecards, and category filters.</p>
+          <p>A recurring research system: daily signal notes, weekly PDF briefs, opportunity scorecards, category filters, and practical validation next steps.</p>
 
         </div>
 
@@ -2353,7 +2846,7 @@
               <div class="icon">D</div>
               <h3>Daily Signal Email</h3>
 
-              <p>3-5 concise opportunities with source, pain quote, urgency score, and next action.</p>
+              <p>3-5 concise signals with source context, buyer hint, pain summary, and next action.</p>
 
             </div>
             <small>Best for momentum</small>
@@ -2365,7 +2858,7 @@
               <div class="icon">W</div>
               <h3>Weekly PDF Report</h3>
 
-              <p>10-15 curated opportunities with MVP, pricing, launch copy, and risk analysis.</p>
+              <p>10-15 curated opportunities with MVP scope, commercial hypothesis, validation path, and risk analysis.</p>
 
             </div>
             <small>Best for weekend planning</small>
@@ -2404,7 +2897,7 @@
         <div class="section-head">
           <h2>A sample brief you can act on immediately.</h2>
 
-          <p>Every opportunity is packaged with evidence, scoring, positioning, MVP scope, pricing, risk, and launch angles.</p>
+          <p>Every opportunity is packaged with evidence, scoring, buyer context, MVP scope, commercial hypothesis, validation path, and risk notes.</p>
 
         </div>
 
@@ -2429,8 +2922,8 @@
                 <div class="metric-strip">
                   <div class="metric"><b>8.6</b><span>Score</span></div>
                   <div class="metric"><b>B2B</b><span>Buyer</span></div>
-                  <div class="metric"><b>5.2</b><span>Build</span></div>
-                  <div class="metric"><b>$9-19</b><span>Price</span></div>
+                  <div class="metric"><b>1-2w</b><span>MVP</span></div>
+                  <div class="metric"><b>Risk</b><span>Template-only demand</span></div>
                 </div>
                 <a class="evidence-link" href="https://www.reddit.com/r/webdev/comments/1klj2ak/how_do_you_balance_client_expectations_with/" target="_blank" rel="noopener noreferrer">View the Reddit source</a>
               </article>
@@ -2456,7 +2949,7 @@
           </figure>
         </div>
         <div class="sample-actions">
-          <p>Read the public sample in English, inspect every source link, and see how evidence becomes an MVP, pricing angle, validation test, and risk assessment.</p>
+          <p>Read the public sample in English, inspect every source link, and see how evidence becomes an MVP, commercial hypothesis, validation test, and risk assessment.</p>
           <a class="button free-sample-link" href="/reports/weekly-brief-01/">Read Weekly Brief 01</a>
         </div>
       </div>
@@ -2487,7 +2980,7 @@
             <ul class="roi-list">
               <li><b>1</b><span>Save research time before every build sprint.</span></li>
               <li><b>2</b><span>Avoid ideas with weak pain or unclear buyers.</span></li>
-              <li><b>3</b><span>Receive product angle, pricing, and launch copy together.</span></li>
+              <li><b>3</b><span>Receive product angle, validation path, and launch context together.</span></li>
               <li><b>4</b><span>Keep a steady pipeline of opportunities without context switching.</span></li>
             </ul>
           </aside>
@@ -2699,7 +3192,7 @@
           <article class="faq-item">
             <h3>Is this just an idea list?</h3>
 
-            <p>No. Every opportunity includes source evidence, pain analysis, current workaround, target user, MVP scope, pricing suggestion, and launch angle.</p>
+            <p>No. Every opportunity includes source evidence, pain analysis, current workaround, target user, MVP scope, commercial hypothesis, validation path, and risk notes.</p>
 
           </article>
           <article class="faq-item">
@@ -2727,7 +3220,7 @@
     <section class="footer-cta">
       <div class="wrap cta-box">
         <div>
-          <h2>Stop collecting random ideas. Start reviewing validated signals.</h2>
+          <h2>Stop collecting random ideas. Start reviewing source-backed signals.</h2>
 
           <p>Every report is designed to help you decide what to build, who it is for, why now, and how to test demand before writing too much code.</p>
 
@@ -2777,7 +3270,7 @@
               <span>Selected plan</span>
 
               <strong id="modalPlanName">Pro</strong>
-              <p id="modalPlanSummary">Daily signal emails, weekly deep report, category filters, and launch angles.</p>
+              <p id="modalPlanSummary">Daily signal emails, weekly deep report, category filters, and validation angles.</p>
             </div>
             <div class="selected-amount" id="modalPlanAmount">¥599</div>
           </div>
@@ -2941,6 +3434,53 @@
         category.classList.add('active');
       });
     });
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion && 'IntersectionObserver' in window && !window.location.hash) {
+      const revealTargets = document.querySelectorAll([
+        '.research-desk',
+        '.section-head',
+        '.deliverable',
+        '.signal-card',
+        '.sample-visual',
+        '.method-visual',
+        '.workflow-panel',
+        '.roi-panel',
+        '.category',
+        '.price-card',
+        '.process-card',
+        '.faq-item',
+        '.payment-panel',
+        '.footer-cta'
+      ].join(','));
+
+      document.documentElement.classList.add('motion-ready');
+      revealTargets.forEach((target, index) => {
+        target.classList.add('motion-reveal');
+        target.style.setProperty('--reveal-index', index % 6);
+      });
+
+      const revealTarget = (target) => target.classList.add('is-visible');
+      const revealVisibleTargets = () => {
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        revealTargets.forEach((target) => {
+          const rect = target.getBoundingClientRect();
+          if (rect.top < viewportHeight * .96 && rect.bottom > 0) revealTarget(target);
+        });
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          revealTarget(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: .16 });
+
+      revealTargets.forEach((target) => revealObserver.observe(target));
+      window.requestAnimationFrame(revealVisibleTargets);
+      window.addEventListener('hashchange', () => window.setTimeout(revealVisibleTargets, 80));
+    }
 
     updatePlanDisplay();
   </script>
