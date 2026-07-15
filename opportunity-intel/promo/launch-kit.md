@@ -2,21 +2,21 @@
 
 主推广链接：
 
-https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/
+https://opportunityintel.top/?utm_source=direct_share&utm_medium=community&utm_campaign=cn_indie_launch
 
 带渠道参数的链接：
 
-- V2EX: https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=v2ex&utm_medium=community&utm_campaign=cn_indie_launch
-- 即刻: https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=jike&utm_medium=social&utm_campaign=cn_indie_launch
-- X: https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=x&utm_medium=social&utm_campaign=cn_indie_launch
-- 小红书: https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=xiaohongshu&utm_medium=social&utm_campaign=cn_indie_launch
-- 微信群: https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=wechat_group&utm_medium=private&utm_campaign=cn_indie_launch
+- V2EX: https://opportunityintel.top/reports/weekly-brief-01/?utm_source=v2ex&utm_medium=community&utm_campaign=cn_indie_launch
+- 即刻: https://opportunityintel.top/reports/weekly-brief-01/?utm_source=jike&utm_medium=social&utm_campaign=cn_indie_launch
+- X: https://opportunityintel.top/reports/weekly-brief-01/?utm_source=x&utm_medium=social&utm_campaign=cn_indie_launch
+- 小红书: https://opportunityintel.top/reports/weekly-brief-01/?utm_source=xiaohongshu&utm_medium=social&utm_campaign=cn_indie_launch
+- 微信群: https://opportunityintel.top/reports/weekly-brief-01/?utm_source=wechat_group&utm_medium=private&utm_campaign=cn_indie_launch
 
 ## 核心卖点
 
 一句话：
 
-给中文独立开发者的海外社区需求雷达：从 Reddit 等社区筛选真实痛点，整理成产品机会、MVP 范围、定价建议和冷启动话术，支持支付宝订阅。
+给中文独立开发者的海外机会情报：从 Reddit 和 App Store 公开内容里筛选真实痛点，整理成产品机会、MVP 范围、验证路径、冷启动话术和风险判断。
 
 适合人群：
 
@@ -45,12 +45,12 @@ Day 2:
 Day 3:
 
 - 即刻/X 发第二个样例机会：App Store 评论挖掘助手。
-- 回复评论时引导到中文页，不主动私信轰炸。
+- 回复评论时引导到免费样本，不主动私信轰炸。
 
 Day 4:
 
 - 找 10 位中文独立开发/AI 出海/程序员副业博主，发送合作私信。
-- 给愿意转发的人 30%-50% 首月返佣或免费 Pro 体验。
+- 给愿意转发的人专属样例报告和可验证来源素材。
 
 Day 5:
 
@@ -70,7 +70,7 @@ Day 7:
 
 标题候选：
 
-- 我做了一个给中文独立开发者看的海外需求雷达，支持支付宝订阅
+- 我做了一个给中文独立开发者看的海外需求雷达
 - 独立开发者怎么从 Reddit 找到能验证的 SaaS 选题？我做了个小服务
 - 分享一个我在做的产品：每周整理海外社区里的 micro-SaaS 机会
 
@@ -95,7 +95,7 @@ Day 7:
 - 目标用户：谁最可能付费。
 - 当前替代方案：他们现在怎么绕过。
 - MVP 范围：1-2 周能做出来验证什么。
-- 定价建议：可能的价格区间。
+- 商业化思路：适合一次性工具、订阅还是服务化试点。
 - 冷启动话术：发帖、回复、落地页可以怎么写。
 - 风险提醒：为什么这个机会可能不成立。
 
@@ -114,15 +114,13 @@ Day 7:
 
 目前服务形式：
 
-- Weekly：¥99/月，每周 1 份 PDF，10 个机会。
-- Pro：¥199/月，每日信号邮件 + 每周 PDF。
-- Studio：¥999/月，包含一个定制机会拆解。
+- 每周交付结构化机会报告。
+- 可选每日信号邮件，适合持续找选题的人。
+- 可选定制机会拆解，适合已经有方向但需要验证路径的人。
 
-现在只有支付宝付款，付款后填表提交邮箱、购买计划和截图，24 小时内人工开通。
+免费样本：
 
-中文介绍页：
-
-https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=v2ex&utm_medium=community&utm_campaign=cn_indie_launch
+https://opportunityintel.top/reports/weekly-brief-01/?utm_source=v2ex&utm_medium=community&utm_campaign=cn_indie_launch
 
 欢迎拍砖，尤其想听听大家觉得报告里还应该加什么字段，才能更适合独立开发者判断要不要做。
 
@@ -132,7 +130,7 @@ https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=v2
 
 我做了一个给中文独立开发者看的海外需求雷达：Opportunity Intel。
 
-它每天/每周从 Reddit 等海外社区筛选真实痛点，整理成产品机会、MVP 范围、定价建议和冷启动话术。现在支持支付宝订阅。
+它从 Reddit / App Store 公开内容里筛选真实痛点，整理成产品机会、MVP 范围、验证路径、冷启动话术和风险判断。
 
 第 2 条：
 
@@ -175,7 +173,7 @@ scope guard + change request kit
 - 目标用户
 - 当前替代方案
 - MVP 范围
-- 定价建议
+- 商业化思路
 - 冷启动话术
 - 风险提醒
 
@@ -189,19 +187,13 @@ scope guard + change request kit
 
 第 7 条：
 
-目前价格：
-
-- Weekly：¥99/月
-- Pro：¥199/月
-- Studio：¥999/月
-
-支付宝付款，付款后填表提交邮箱和截图，24 小时内开通。
+免费样本里可以看到完整结构：来源链接、买家判断、MVP 拆法、验证动作和风险提醒。
 
 第 8 条：
 
-中文介绍页在这里：
+免费样本在这里：
 
-https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=x&utm_medium=social&utm_campaign=cn_indie_launch
+https://opportunityintel.top/reports/weekly-brief-01/?utm_source=x&utm_medium=social&utm_campaign=cn_indie_launch
 
 如果你正在找海外产品选题，可以先看页面里的样例机会。
 
@@ -239,20 +231,20 @@ https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=x&
 
 我把这套流程做成了一个订阅服务：Opportunity Intel。
 
-每周整理海外社区里的产品机会，包含痛点证据、MVP、定价建议和冷启动话术。现在支持支付宝付款。
+每周整理海外社区里的产品机会，包含痛点证据、MVP、验证路径、商业化思路、冷启动话术和风险提醒。
 
-中文页：
+免费样本：
 
-https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=xiaohongshu&utm_medium=social&utm_campaign=cn_indie_launch
+https://opportunityintel.top/reports/weekly-brief-01/?utm_source=xiaohongshu&utm_medium=social&utm_campaign=cn_indie_launch
 
 评论区可以丢你正在考虑的方向，我也可以按这个框架帮你拆一下。
 
 配图建议：
 
-- 第 1 张：中文落地页首屏截图。
+- 第 1 张：英文落地页首屏截图。
 - 第 2 张：样例机会卡片截图。
 - 第 3 张：评分维度图。
-- 第 4 张：价格和支付宝付款流程截图。
+- 第 4 张：免费样本报告截图。
 
 ## 微信群短版
 
@@ -263,14 +255,15 @@ https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=xi
 - 产品机会
 - 痛点证据
 - MVP 范围
-- 定价建议
+- 验证路径
 - 冷启动话术
+- 风险提醒
 
-现在支持支付宝订阅，付款后填邮箱和截图，24 小时内开通。
+免费样本可以直接看报告结构和来源链接。
 
-中文介绍页：
+免费样本：
 
-https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=wechat_group&utm_medium=private&utm_campaign=cn_indie_launch
+https://opportunityintel.top/reports/weekly-brief-01/?utm_source=wechat_group&utm_medium=private&utm_campaign=cn_indie_launch
 
 如果你最近在找海外产品选题，可以先看页面里的样例机会。
 
@@ -278,19 +271,18 @@ https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=we
 
 你好，我在做一个给中文独立开发者看的海外需求情报服务，叫 Opportunity Intel。
 
-它会从 Reddit 等海外社区筛选真实痛点，整理成产品机会、MVP 范围、定价建议和冷启动话术。目标用户是想做英文产品、AI 工具、DevTools、micro-SaaS 的中文开发者。
+它会从 Reddit 等海外社区筛选真实痛点，整理成产品机会、MVP 范围、验证路径、冷启动话术和风险判断。目标用户是想做英文产品、AI 工具、DevTools、micro-SaaS 的中文开发者。
 
 我觉得你的读者/群友里可能有一部分人会需要这个。
 
-这里是中文页：
+这里是免费样本：
 
-https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=partner&utm_medium=creator&utm_campaign=cn_indie_launch
+https://opportunityintel.top/reports/weekly-brief-01/?utm_source=partner&utm_medium=creator&utm_campaign=cn_indie_launch
 
 如果你愿意帮忙转发或测评，我可以提供：
 
-- 免费 Pro 体验。
 - 专属样例报告。
-- 首月订阅返佣。
+- 可验证的来源链接和机会拆解素材。
 
 如果方便，我可以发你一份样例机会拆解，看看是否适合你的受众。
 
@@ -298,19 +290,15 @@ https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=pa
 
 有人问“和自己刷 Reddit 有什么区别？”
 
-区别是省时间和结构化判断。自己刷 Reddit 能看到很多帖子，但很难持续把痛点、买家、替代方案、MVP、定价和冷启动话术放在一起比较。Opportunity Intel 做的是把散落信号压缩成能评审的机会清单。
+区别是省时间和结构化判断。自己刷 Reddit 能看到很多帖子，但很难持续把痛点、买家、替代方案、MVP、验证动作和冷启动话术放在一起比较。Opportunity Intel 做的是把散落信号压缩成能评审的机会清单。
 
 有人问“能保证赚钱吗？”
 
 不能，也不会这样宣传。它是需求研究和选题判断工具，帮助你减少盲目开工，但每个机会都需要继续验证。
 
-有人问“为什么只支持支付宝？”
+有人问“怎么购买？”
 
-当前主要面向中文独立开发者，支付宝是最容易先跑通的支付方式。后续如果海外用户多，会再接 Stripe 或其他支付。
-
-有人问“付款后怎么开通？”
-
-支付宝扫码付款后，提交激活表单，填写邮箱、购买计划、关注品类、付款人姓名和截图。我们会在 24 小时内核对并按邮箱开通。
+购买和开通流程在官网里有说明。推广回复里先引导用户看免费样本，不主动写价格。
 
 ## 数据记录表字段
 
@@ -326,6 +314,6 @@ https://hjdaskdasds.github.io/qzshenqi-legal/opportunity-intel/cn/?utm_source=pa
 - 咨询数
 - 表单提交数
 - 付款数
-- 订阅金额
+- 成交情况
 - 用户主要问题
 - 下次优化点

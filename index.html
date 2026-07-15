@@ -2825,10 +2825,15 @@
     </section>
   </div>
 
+  <script src="/assets/site-analytics.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
     function trackEvent(eventName, parameters = {}) {
+      if (typeof window.oiTrack === 'function') {
+        window.oiTrack(eventName, parameters);
+        return;
+      }
       window.dataLayer.push({ event: eventName, ...parameters });
       if (typeof window.gtag === 'function') window.gtag('event', eventName, parameters);
     }
@@ -2869,6 +2874,7 @@
 
     function updatePlanDisplay(plan = selectedPlan) {
       selectedPlan = planDetails[plan] ? plan : 'pro';
+      window.oiSelectedPlan = selectedPlan;
       const detail = planDetails[selectedPlan];
       modalPlanName.textContent = detail.name;
       modalPayPlan.textContent = detail.name;
@@ -2879,6 +2885,7 @@
       planCards.forEach((card) => {
         card.classList.toggle('active-plan', card.dataset.planCard === selectedPlan);
       });
+      if (typeof window.oiDecorateTallyLinks === 'function') window.oiDecorateTallyLinks();
     }
 
     function openCheckout(plan) {
